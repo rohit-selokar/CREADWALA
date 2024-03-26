@@ -1,0 +1,34 @@
+@keyframes slideRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  .animate-slide-Right {
+    animation: slideRight 30s linear infinite;
+  }
+  
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .animate-slide-Left {
+    animation: slideLeft 30s linear infinite;
+  }
+  /* transition: box-shadow 0.3s ease; */
+ 
+  .shadow-card:hover {
+    transition: 0.2s ease;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.8); /* Adjust the shadow color and strength */
+  }
+
+  
