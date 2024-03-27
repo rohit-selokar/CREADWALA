@@ -33,7 +33,9 @@ const Header = () => {
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Cards</li>
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Insurance</li>
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Cibil Score</li>
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">EMI Calculator</li>
+          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">
+            <Link to="/emicalculator">EMI Calculator</Link>
+          </li>
         </ul>
       </div>
 

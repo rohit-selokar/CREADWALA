@@ -1,11 +1,21 @@
 import React from "react";
 import "../app.css";
+import home from "../assets/homeLoan.png";
+import car from "../assets/car.png";
+import card from "../assets/card.png";
+import cloud from "../assets/cloud_edu.png";
+import gold from "../assets/gold.png";
+import business from "../assets/businessLoan.png";
 import house from "../assets/house.png";
+import right from "../assets/blue-right.png";
 
 const Product = () => {
   return (
-    <div className="my-14 font-manrope mx-8 md:mx-16 lg:mx-20 xl:mx-26">
-      <p className="text-[25px] text-center md:text-start font-bold lg:my-10 lg:text-[30px]">Check out what <span className="text-[#474FFF]">CREDWALA</span> trending products</p>
+    <div className="my-14 font-manrope mx-14 md:mx-16 lg:mx-20 xl:mx-26">
+      <p className="text-[23px] text-center md:text-start font-bold lg:my-10 lg:text-[30px]">
+        Check out what <span className="text-[#474FFF]">CREDWALA</span> trending
+        products
+      </p>
 
       <div className="my-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         <div className="ag-courses_item">
@@ -14,17 +24,41 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">HOME LOAN</p>
+                  <p className="my-1.5 pr-8">
+                    Choose from lowest interest rates available for your dream
+                    home
+                  </p>
+                </div>
+                <div>
+                  <img src={home} className="h-10 w-20" />
+                </div>
+              </div>
+              <p className="flex items-center ag-courses-item_date mt-1 text-[#007F86] text-[17px] font-semibold">
+                Check Eligibility <img src={right} className="h-3 ml-2" />
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="ag-courses_item">
+          <div className="ag-courses-item_link rounded-xl border shadow-lg">
+            <div className="ag-courses-item_bg" />
+            <div className=" ag-courses-item_title">
+              <div className="flex">
+                <div>
+                  <p className="font-bold text-[15px]">PERSONAL LOAN</p>
+                  <p className="my-2">
+                    Select the best offer curated just for you from a wide
+                    choice of Banks & NBFC's
                   </p>
                 </div>
                 <div>
                   <img src={house} />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date text-[#007F86] text-[17px] font-semibold">
+                Check Eligibility <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -36,17 +70,17 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">BUSINESS LOAN</p>
+                  <p className="my-2 pr-14">
+                    Expand your business with loans at low interest rates.
                   </p>
                 </div>
                 <div>
-                  <img src={house} />
+                  <img src={business} />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
+                Check Eligibility <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -58,17 +92,17 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">STEP UP CREDIT CARD</p>
+                  <p className="my-3">
+                    A Credit Card for everyone, backed by a Fixed Deposit
                   </p>
                 </div>
                 <div>
-                  <img src={house} />
+                  <img src={card} />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className=" flex items-center ag-courses-item_date mt-3 text-[#007F86] text-[17px] font-semibold">
+                Know More <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -80,17 +114,18 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">USED CAR LOAN</p>
+                  <p className="my-3">
+                    Choose from lowest interest rates available for your dream
+                    home
                   </p>
                 </div>
                 <div>
-                  <img src={house} />
+                  <img src={car} className="w-24" />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date text-[#007F86] text-[17px] mt-2 font-semibold">
+                Know More <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -102,17 +137,18 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">EDUCATION</p>
+                  <p className="my-1 ">
+                    Select the best offer curated just for you from a wide
+                    choice of Banks & NBFC's
                   </p>
                 </div>
                 <div>
-                  <img src={house} />
+                  <img src={cloud} className=" w-16" />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date text-[#007F86] text-[17px] font-semibold">
+                Know More <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -124,17 +160,17 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
+                  <p className="font-bold text-[15px]">GOLD LOAN</p>
+                  <p className="my-2 pr-4">
+                    Expand your business with loans at low interest rates.
                   </p>
                 </div>
                 <div>
-                  <img src={house} />
+                  <img src={gold} className="w-20" />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date mt-4 text-[#007F86] text-[17px] font-semibold">
+                Know More <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
@@ -146,8 +182,8 @@ const Product = () => {
             <div className=" ag-courses-item_title">
               <div className="flex">
                 <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
+                  <p className="font-bold text-[15px]">LOAN AGANIST SECURITY</p>
+                  <p className="my-2 pr-5">
                     Get liquidity against your property at best interest rates
                   </p>
                 </div>
@@ -155,38 +191,16 @@ const Product = () => {
                   <img src={house} />
                 </div>
               </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="ag-courses_item">
-          <div className="ag-courses-item_link rounded-lg border shadow-lg">
-            <div className="ag-courses-item_bg" />
-            <div className=" ag-courses-item_title">
-              <div className="flex">
-                <div>
-                  <p className="font-bold text-[16px]">LOAN AGANIST SECURITY</p>
-                  <p className="my-6 pr-14">
-                    Get liquidity against your property at best interest rates
-                  </p>
-                </div>
-                <div>
-                  <img src={house} />
-                </div>
-              </div>
-              <p className="ag-courses-item_date mt-6 text-[#007F86] text-[17px] font-semibold">
-                Know More {"->"}
+              <p className="flex items-center ag-courses-item_date mt-4 text-[#007F86] text-[17px] font-semibold">
+                Know More <img src={right} className="h-3 ml-2" />
               </p>
             </div>
           </div>
         </div>
       </div>
       <div className="text-center lg:mt-12">
-      <button className="bg-[#102ED0] text-white text-[15px] w-[120px] h-[33px] rounded-full">
-      View more
+        <button className="bg-[#102ED0] text-white text-[15px] w-[120px] h-[33px] rounded-full">
+          View more
         </button>
       </div>
     </div>

@@ -1,9 +1,18 @@
 import React from "react";
 import first from "../assets/first.png";
+import line from "../assets/line-image.png";
 
 const First = () => {
   return (
-    <div className=" bg-[#f2f2f5] font-manrope text-center lg:flex items-center lg:text-start lg:px-6 xl:px-12">
+    <div
+      className="bg-[#f2f2f5] font-manrope text-center lg:flex items-center lg:text-start lg:px-6 xl:px-12"
+      style={{
+        backgroundImage: `url(${line})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+      }}
+    >
       <div className="lg:order-2 md:flex items-center justify-center xl:justify-start lg:w-1/2">
         <img
           src={first}
