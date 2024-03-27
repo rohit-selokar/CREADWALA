@@ -7,9 +7,9 @@ import "../app.css";
 
 const Cards = () => {
   return (
-    <div className='mx-7 my-10 lg:mx-20 xl:mx-64'>
-      <p className='font-bold text-center text-[25px] my-3 xl:text-[33px]'>Bringing You the <span className='text-[#112FD1]'>Best</span> of Finances</p>
-      <div className='grid gap-5 md:grid-cols-2 my-6'>
+    <div className=' mx-7 my-10 lg:px-20 xl:px-56'>
+      <p className='font-bold text-center text-[25px] my-3 lg:text-[34px] xl:text-[35px]'>Bringing You the <span className='text-[#112FD1]'>Best</span> of Finances</p>
+      <div className=' grid gap-5 md:grid-cols-2 my-6'>
         <img src={home} className='shadow-card cursor-pointer'/>
         <img src={credit} className='shadow-card cursor-pointer'/>
         <img src={business} className='shadow-card cursor-pointer'/>

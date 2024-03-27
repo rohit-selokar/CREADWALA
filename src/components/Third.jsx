@@ -2,9 +2,11 @@ import React from "react";
 import img1 from "../assets/6229553-removebg-preview 1.png";
 import img2 from "../assets/icon.png";
 import img3 from "../assets/head shape.png";
+
+
 const Third = () => {
   return (
-    <div className="font-manrope my-10 bg-[#FFFFFF] lg:flex lg:p-4 lg:items-center lg:justify-center">
+    <div className="font-manrope my-10 bg-[#EEF1FF] lg:flex lg:p-4 lg:items-center lg:justify-center">
       <div className=" lg:flex lg:flex-col mx-6">
         <div className="lg:order-2 lg:my-6 lg:py-4">
           <img
@@ -13,12 +15,12 @@ const Third = () => {
           />
         </div>
 
-        <div className="text-center lg:order-1 lg:text-start">
-          <p className="text-[25px] font-semibold lg:text-[32px]">
+        <div className="text-center lg:order-1 lg:text-start xl:mx-10">
+          <p className="text-[25px] font-semibold lg:text-[34px]">
             Get your latest Credit Score
           </p>
           <p className="my-2">One powerful number that puts you in control</p>
-          <button className="bg-[#102ED0] text-white w-[210px] h-[39px] my-4 rounded-full">
+          <button className="bg-[#102ED0] text-[15px] text-white w-[210px] h-[39px] my-4 rounded-full">
             Get Free Your Credit Score
           </button>
         </div>

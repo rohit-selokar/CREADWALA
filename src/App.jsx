@@ -8,6 +8,7 @@ import Work from './components/Work'
 import Loan from './components/Loan'
 import Slide from './components/Slide'
 import Footer from './components/Footer'
+import Product from './components/Product'
 // import { Route, Routes } from 'react-router-dom'
 // import Home from './pages/Home'
 // import About from './pages/About'
@@ -23,12 +24,14 @@ const App = () => {
 
       <First/>
       <Second/>
+      <Product/>
       <Third/>
       <Work/>
       <Loan/>
       <Cards/>
       <Slide/>
       <Footer/>
+        
     </>
   )
 }

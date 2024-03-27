@@ -7,9 +7,9 @@ import img3 from "../assets/img3.png";
 const Work = () => {
   return (
     <div className=" lg:flex lg:mx-8 items-center justify-center">
-      <div className="mx-8">
+      <div className="mx-8 xl:pr-32">
         <div className="text-center my-4  lg:text-start lg:my-8">
-          <p className="text-[25px] font-bold lg:text-[33px]">
+          <p className="text-[25px] font-bold lg:text-[34px] xl:text-[35px]">
             how <span className="text-[#474FFF]">credwala</span> works ?
           </p>
           <p className="text-[#111111] text-[15px] lg:my-2">
@@ -38,7 +38,7 @@ const Work = () => {
         </div>
       </div>
       <div className=" md:mx-32 lg:mx-0">
-        <img src={work} className="md:h-96" />
+        <img src={work} className="md:h-96 lg:h-80" />
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ import "../app.css";
 const Slide = () => {
   return (
     <div className="text-center py-6 bg-[#e3faf5]">
-      <p className="font-bold text-[25px] lg:text-[33px] md:mx-52 lg:mx-72 xl:mx-[35%]">
+      <p className="font-bold text-[25px] lg:text-[33px] md:mx-52 lg:mx-72 xl:mx-[34%]">
         <span className="text-[#474FFF]">Our partners</span> from across the
         industry
       </p>
