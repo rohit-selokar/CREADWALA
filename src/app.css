@@ -62,7 +62,7 @@
 .ag-courses-item_bg {
   height: 110px;
   width: 110px;
-  background-color: #84DE64;
+  background-image: linear-gradient(to right top, #a1eb87, #9ae87e, #93e576, #8be16d, #84de64);
 
   z-index: 1;
   position: absolute;
@@ -76,25 +76,25 @@
   transition: all 1s ease;
 }
 .ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-  background-color: #FF6500;
+  background-image: linear-gradient(to right top, #ffb889, #ffa56b, #ff924d, #ff7c2e, #ff6500);
 }
 .ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-  background-color: #84DE64;
+  background-image: linear-gradient(to right top, #a1eb87, #9ae87e, #93e576, #8be16d, #84de64);
 }
 .ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-  background-color: #0468B1;
+  background-image: linear-gradient(to right top, #2e75a8, #2572aa, #1b6fad, #106baf, #0468b1);
 }
 .ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-  background-color: #84DE64;
+  background-image: linear-gradient(to right top, #a1eb87, #9ae87e, #93e576, #8be16d, #84de64);
 }
 .ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-  background-color: #FF6500;
+  background-image: linear-gradient(to right top, #ffb889, #ffa56b, #ff924d, #ff7c2e, #ff6500);
 }
 .ag-courses_item:nth-child(7n) .ag-courses-item_bg {
-  background-color: #84DE64;
+  background-image: linear-gradient(to right top, #a1eb87, #9ae87e, #93e576, #8be16d, #84de64);
 }
 .ag-courses_item:nth-child(8n) .ag-courses-item_bg {
-  background-color: #0468B1;
+  background-image: linear-gradient(to right top, #2e75a8, #2572aa, #1b6fad, #106baf, #0468b1);
 }
 
 /* @media only screen and (max-width: 979px) {

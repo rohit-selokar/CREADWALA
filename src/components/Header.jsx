@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] text-[16px] h-[72px] flex justify-between lg:justify-around px-3 items-center shadow-sm sticky top-0 z-50">
+    <nav className="bg-[#FFFFFF] text-[16px] h-[72px] flex justify-between lg:justify-around px-3 items-center shadow-md sticky top-0 z-50">
       <div>
         <p className="cursor-pointer">
           <Link to="/">
@@ -28,7 +28,7 @@ const Header = () => {
           menuOpen ? "block " : "hidden"
         } lg:static lg:bg-transparent lg:p-0`}
       >
-        <ul className=" flex flex-col items-center lg:w-[564px] lg:h-[24px] lg:flex-row lg:items-center">
+        <ul className=" flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px]">
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Loans</li>
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Cards</li>
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Insurance</li>
