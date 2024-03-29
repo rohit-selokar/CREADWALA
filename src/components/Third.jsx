@@ -7,7 +7,7 @@ import img1 from "../assets/bg-img.png";
 const Third = () => {
   return (
     <div
-      className=" font-manrope lg:py-14 lg:flex lg:justify-around xl:py-16"
+      className=" font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16"
       style={{
         backgroundImage: `url(${img1})`,
         backgroundRepeat: "no-repeat",
@@ -15,7 +15,7 @@ const Third = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="text-center lg:text-start">
+      <div className="text-center md:text-start">
         <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[45px]">
           Get your latest Credit Score
         </p>
@@ -27,15 +27,15 @@ const Third = () => {
         </button>
       </div>
 
-      <div className="bg-[#FFFFFF] shadow-lg mx-6 md:mx-40 rounded-2xl lg:mx-1 lg:w-[410px] xl:w-[500px] xl:pb-6">
+      <div className="bg-[#FFFFFF] shadow-lg mx-10 md:mx-1 rounded-2xl md:w-[350px] lg:mx-1 lg:w-[410px] xl:w-[500px] xl:pb-6">
         <img src={img3} className="xl:w-[500px]" />
         <div className="p-4 xl:py-6">
           <p className="text-[23px] font-semibold xl:text-[25px]">Credwala</p>
           <div className="my-3 lg:p-2">
-            <div className="flex items-start lg:mt-3">
+            <div className="flex items-start mt-3">
               <img src={img2} className=" rounded-full w-[40px] xl:w-[60px]" />
               <div className="ml-2 lg:ml-6">
-                <p className="text-[15px] font-semibold xl:text-[18px]">
+                <p className="text-[14px] lg:text-[15px] font-semibold xl:text-[18px]">
                   Increase chances of application approval
                 </p>
                 <p className="text-[14px] xl:my-2 xl:text-[15px]">
@@ -45,10 +45,10 @@ const Third = () => {
               </div>
             </div>
 
-            <div className="flex items-start lg:mt-6">
+            <div className="flex items-start mt-6">
               <img src={img2} className=" rounded-full w-[40px] xl:w-[60px]" />
               <div className="ml-2 lg:ml-6">
-                <p className="text-[15px] font-semibold xl:text-[18px]">
+                <p className="text-[14px] lg:text-[15px] font-semibold xl:text-[18px]">
                   Better offers
                 </p>
                 <p className="text-[14px] xl:my-2 xl:text-[15px]">
@@ -58,10 +58,10 @@ const Third = () => {
               </div>
             </div>
 
-            <div className="flex items-start lg:mt-6">
+            <div className="flex items-start mt-6">
               <img src={img2} className=" rounded-full w-[40px] xl:w-[60px]" />
               <div className="ml-2 lg:ml-6">
-                <p className="text-[15px] font-semibold xl:text-[18px]">
+                <p className="text-[14px] lg:text-[15px] font-semibold xl:text-[18px]">
                   Take charge of your finances
                 </p>
                 <p className="text-[14px] xl:my-2 xl:text-[15px]">
@@ -70,10 +70,10 @@ const Third = () => {
               </div>
             </div>
 
-            <div className="flex items-start lg:mt-6">
+            <div className="flex items-start mt-6">
               <img src={img2} className=" rounded-full w-[40px] xl:w-[60px]" />
               <div className="ml-2 lg:ml-6">
-                <p className="text-[15px] font-semibold xl:text-[18px]">
+                <p className="text-[14px] lg:text-[15px] font-semibold xl:text-[18px]">
                   Increase chances of application approval
                 </p>
                 <p className="text-[14px] xl:my-2 xl:text-[15px]">
