@@ -6,46 +6,65 @@ import arrow from "../../assets/Arrow.png";
 const EmiCalculator = () => {
   return (
     <>
-      <p className="m-4 text-[25px] lg:text-[30px] font-semibold xl:pl-6 xl:my-6">EMI Calculators</p>
-      <div className="lg:flex xl:mx-12">
-        <div className="bg-[#f8f8f8] border mx-10 lg:mx-8 rounded-2xl p-10">
-          <div className="md:flex lg:items-center">
-            <img src={slider} className=" md:w-[380px] lg:w-[300px] xl:w-[420px]" />
-            <img src={pie} className="mx-6 w-[190px] md:w-[210px] my-2 md:my-6 lg:my-2 lg:w-[160px] lg:mx-16 xl:w-[200px] xl:mx-20" />
+      <p className="m-5 font-manrope lg:m-4 lg:pl-2 text-[25px] lg:text-[25px] font-semibold xl:pl-12 xl:my-8">
+        EMI Calculators
+      </p>
+      <div className="mx-4 md:mx-10 lg:flex justify-center">
+        <div className="p-4 bg-[#f8f8f8] border rounded-2xl">
+          <div className="flex flex-col md:flex-row items-center ">
+            <img
+              src={slider}
+              className=" md:w-[380px] lg:w-[300px] xl:w-[420px]"
+            />
+            <img
+              src={pie}
+              className="my-6 md:w-[210px] md:mx-10 lg:my-2 lg:w-[160px] lg:mx-10 xl:w-[200px] xl:mx-20"
+            />
           </div>
-          <div className="flex">
+          <div className="flex text-[#434061] items-center justify-center md:justify-normal lg:mt-10">
             <div>
               <ul>
                 <li className="p-4 font-semibold">Monthly Emi</li>
-                <li className="p-4 font-semibold">Monthly Emi</li>
-                <li className="p-4 font-semibold">Monthly Emi</li>
-                <li className="p-4 font-semibold">Monthly Emi</li>
+                <li className="p-4 font-semibold">Principal Amount</li>
+                <li className="p-4 font-semibold">Total Interest</li>
+                <li className="p-4 font-semibold">Total Amount</li>
               </ul>
             </div>
-            <div className="ml-2 md:ml-36 lg:ml-14 xl:ml-40">
+            <div className=" md:ml-36 lg:ml-14 xl:ml-40">
               <ul>
-                <li className="p-4 font-semibold">₹ 10,00,000</li>
-                <li className="p-4 font-semibold">₹ 10,00,000</li>
-                <li className="p-4 font-semibold">₹ 10,00,000</li>
-                <li className="p-4 font-semibold">₹ 10,00,000</li>
+                <li className="p-4 font-semibol">₹ 19,566</li>
+                <li className="p-4 font-semibol">₹ 10,00,000</li>
+                <li className="p-4 font-semibol">₹ 1,73,969</li>
+                <li className="p-4 font-semibol">₹ 11,73,969</li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mx-12 my-8 lg:my-0 lg:mx-10 text-center">
+        <div className="font-inter mx-10 my-8 lg:my-0 lg:mx-10 lg:ml-10 text-center">
           <table>
             <thead>
               <tr className="bg-[#E0E0E0]">
-                <th className="border py-2 px-12 text-[16px]bg-[#E0E0E0]">
+                <th className="font-semibold border py-3 px-12 text-[18px]">
                   Popular Calculators
                 </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-[#434061] ">
               <tr>
                 <td className="border text-[14px] py-2 px-12 xl:text-[16px]">
-                  Mutual Fund Returns Calculator
+                  SIP Calculator
+                </td>
+              </tr>
+              <tr>
+                <td className="border py-2 px-12 text-[16px]">
+                  Lumpsum Calculator
+                </td>
+              </tr>
+
+              <tr>
+                <td className="border py-2 px-12 text-[16px]">
+                  SWP Calculator
                 </td>
               </tr>
               <tr>
@@ -53,82 +72,74 @@ const EmiCalculator = () => {
                   Mutual Fund Returns Calculator
                 </td>
               </tr>
-              <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
-              </tr>
+
               <tr>
                 <td className="border py-2 px-12 text-[16px]">
-                  Mutual Fund Returns Calculator
+                  Sukanya Samridhhi Yojana Calculator
                 </td>
               </tr>
               <tr>
                 <td className="border py-2 px-12 text-[16px]">
-                  Mutual Fund Returns Calculator
-                </td>
-              </tr>
-              <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
-              </tr>
-              <tr>
-                <td className="border py-2 px-12 text-[16px]">
-                  Mutual Fund Returns Calculator
+                  PPF Calculator
                 </td>
               </tr>
               <tr>
                 <td className="border py-2 px-12 text-[16px]">
-                  Mutual Fund Returns Calculator
+                  EPF Calculator
                 </td>
               </tr>
               <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
+                <td className="border py-2 px-12 text-[16px]">FD Calculator</td>
               </tr>
               <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
+                <td className="border py-2 px-12 text-[16px]">RD Calculator</td>
               </tr>
               <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
+                <td className="border py-2 px-12 text-[16px]">
+                  EMI Calculator
+                </td>
               </tr>
               <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
+                <td className="border py-2 px-12 text-[16px]">
+                  Income Tax Calculator
+                </td>
               </tr>
+
               <tr>
-                <td className="border py-2 px-12 text-[16px]">SIP Calculator</td>
+                <td className="border py-2 px-12 text-[16px]">
+                  HRA Calculator
+                </td>
+              </tr>
+
+              <tr>
+                <td className="border py-2 px-12 text-[16px]">
+                  NPS Calculator
+                </td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-
-{/* table */}
-      <div className="mx-2 md:mx-10 lg:mx-10 xl:mx-16 my-16">
-        <p className="font-semibold text-[25px] lg:text-[32px] my-4">EMI Schedule</p>
+      {/* table */}
+      <div className="mx-2 font-manrope md:mx-10 lg:mx-10 xl:mx-16 my-16">
+        <p className="font-semibold text-[25px] lg:text-[30px] my-6">
+          EMI Schedule
+        </p>
 
         <div className="overflow-x-auto text-center">
           <table className="min-w-full divide-y divide-gray-200">
             <thead className="bg-gray-50">
-              <tr className="border bg-[#FFF3F1]">
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Month
-                </th>
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Opening Balance
-                </th>
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Interest
-                </th>
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Principal
-                </th>
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Closing Balance
-                </th>
-                <th className=" py-3 text-center text-md font-medium text-[#111111] tracking-wider">
-                  Loan Paid Till Date (%)
-                </th>
+              <tr className="border bg-[#FFF3F1] lg:text-[16px] xl:text-[18px] text-[#111111] font-semibold">
+                <th className=" py-3 font-semibold">Month</th>
+                <th className=" py-3 font-semibold">Opening Balance</th>
+                <th className=" py-3 font-semibold">Interest</th>
+                <th className=" py-3 font-semibold">Principal</th>
+                <th className=" py-3 font-semibold">Closing Balance</th>
+                <th className=" py-3 font-semibold">Loan Paid Till Date (%)</th>
               </tr>
             </thead>
-            <tbody className="bg-white divide-y divide-gray-200">
+            <tbody className="bg-white divide-y divide-gray-200 text-[#434061] text-[15px]">
               <tr className="border">
                 <td className="py-3 px-8 whitespace-nowrap">Mar '24</td>
                 <td className="py-3 px-8 whitespace-nowrap">₹ 10,00,000</td>
@@ -188,43 +199,43 @@ const EmiCalculator = () => {
       </div>
 
       <div
-        className="py-8 text-center"
+        className="py-8 text-center xl:pb-20"
         style={{
           backgroundImage:
             "linear-gradient(to right top, #2d4255, #2b3f52, #283c4e, #263a4b, #243748)",
         }}
       >
-        <p className="flex flex-col justify-center items-center text-[25px] font-semibold text-white">
+        <p className="flex flex-col justify-center items-center text-[25px] font-semibold text-white xl:text-[30px]">
           Popular Loans EMI Calculators
           <img src={arrow} className="w-3 my-5" />
         </p>
 
         <div className="mx-16 md:mx-24 lg:mx-28 xl:mx-44 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
-          <p className="p-3 border bg-white rounded-lg">
+          <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
         </div>

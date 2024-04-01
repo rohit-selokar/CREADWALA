@@ -18,11 +18,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            <Link to = "/emicalculator">
+          <Link to="/emicalculator">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
               Calculate
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -32,9 +32,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+          <Link to="sipcalculator">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -44,9 +46,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+          <Link to="/rdcalulator">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -56,9 +60,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+          <Link to="ssycalculator">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -68,9 +74,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
+          <Link to="/ppfcalculator">
           <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
             Calculate
           </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -90,15 +98,17 @@ const Emi_Calculator = () => {
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
           <img src={cal} />
           <p className="font-semibold text-[#44475B] text-[16px] my-2">
-            MF REturns
+            MF Returns
           </p>
           <p className="text-[14px] my-2 text-[#44475B]">
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
+          <Link to="mfcalculator">
           <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
             Calculate
           </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -108,9 +118,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
+          <Link to="/swpcalculator">
           <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
             Calculate
           </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
