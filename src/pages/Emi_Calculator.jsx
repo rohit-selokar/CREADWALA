@@ -8,7 +8,7 @@ const Emi_Calculator = () => {
       <p className="text-center font-semibold text-[25px] my-4 lg:text-[35px]">
         <span className="text-[#3A55E8]">EMI</span> Calculators
       </p>
-      <div className="my-4 grid mx-20 gap-4 md:mx-28 md:grid-cols-2 lg:grid-cols-3 lg:mx-32 xl:grid-cols-4 xl:mx-40 lg:my-10">
+      <div className="my-4 grid mx-16 gap-4 md:mx-28 md:grid-cols-2 lg:grid-cols-3 lg:mx-32 xl:grid-cols-4 xl:mx-40 lg:my-10">
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
           <img src={cal} />
           <p className="font-semibold text-[#44475B] text-[16px] my-2">
@@ -75,9 +75,9 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/ppfcalculator">
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
           </Link>
         </div>
 
@@ -90,9 +90,11 @@ const Emi_Calculator = () => {
             Calculate your personal loan, home loan, or car loan EMI with
             CREDWALA EMI Calculator.
           </p>
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+          <Link to="/lumpsumcalculator">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-7 shadow-lg">
@@ -105,9 +107,9 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="mfcalculator">
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
           </Link>
         </div>
 
@@ -119,9 +121,9 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/swpcalculator">
-          <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
-            Calculate
-          </button>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full">
+              Calculate
+            </button>
           </Link>
         </div>
 

@@ -2,7 +2,7 @@ import React from "react";
 import pie from "../../assets/pie.png";
 import slider from "../../assets/slider.png";
 import arrow from "../../assets/Arrow.png";
-
+import faq from "../../assets/faq.png";
 const EmiCalculator = () => {
   return (
     <>
@@ -122,7 +122,7 @@ const EmiCalculator = () => {
       </div>
 
       {/* table */}
-      <div className="mx-2 font-manrope md:mx-10 lg:mx-10 xl:mx-16 my-16">
+      <div className="mx-2 font-manrope md:mx-10 lg:mx-10 xl:mx-24 my-16">
         <p className="font-semibold text-[25px] lg:text-[30px] my-6">
           EMI Schedule
         </p>
@@ -210,7 +210,7 @@ const EmiCalculator = () => {
           <img src={arrow} className="w-3 my-5" />
         </p>
 
-        <div className="mx-16 md:mx-24 lg:mx-28 xl:mx-44 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mx-16 md:mx-24 lg:mx-28 xl:mx-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
@@ -238,6 +238,140 @@ const EmiCalculator = () => {
           <p className="p-3 border bg-white rounded-lg xl:p-6 xl:text-[19px]">
             Personal Loan EMI Calculator
           </p>
+        </div>
+      </div>
+
+      {/* FAQ */}
+
+      <div className="mx-4 my-16 font-manrope md:mx-16 lg:mx-28 xl:mr-96">
+        <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
+          FAQs
+        </p>
+        <div class=" divide-y divide-neutral-200 mt-4">
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  What sort of loans can I use the EMI calculator for?
+                </span>
+                <span class="transition group-open:rotate-180 ml-20">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  How does the debt-to-income ratio affect my chances of
+                  availing of a loan?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  What does an EMI consist of?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  What happens if I fail to pay my EMIs?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
         </div>
       </div>
     </>

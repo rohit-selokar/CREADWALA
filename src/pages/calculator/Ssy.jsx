@@ -181,6 +181,169 @@ const Ssy = () => {
           </div>
         </div>
       </div>
+
+      {/* FAQ */}
+      <div className="mx-4 my-16 font-manrope md:mx-16 lg:mr-[150px] xl:mx-24 xl:mr-[450px]">
+        <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
+          FAQs
+        </p>
+        <div class=" divide-y divide-neutral-200 mt-4">
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  Can I open 2 Sukanya Samriddhi Yojana accounts?
+                </span>
+                <span class="transition group-open:rotate-180 ml-20">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  Can parents withdraw money from the Sukanya Samriddhi Yojana
+                  account?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  What is the maturity period of an SSY account?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  {" "}
+                  Can an SSY account be closed before maturity?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+          <div class="py-3 md:py-5">
+            <details class="group">
+              <summary class="flex cursor-pointer list-none items-center justify-between">
+                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
+                  Is there any tax benefit of Sukanya Samriddhi Yojana?
+                </span>
+                <span class="transition group-open:rotate-180">
+                  <svg
+                    fill="none"
+                    height="24"
+                    shape-rendering="geometricPrecision"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    viewBox="0 0 24 24"
+                    width="24"
+                  >
+                    <path d="M6 9l6 6 6-6"></path>
+                  </svg>
+                </span>
+              </summary>
+              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
+                facilisis mauris sit amet massa vitae tortor condimentum lacinia
+                quis vel eros donec ac odio tempor orci dapibus ultrices in
+                iaculis nunc sed augue lacus viverra vitae congue eu consequat
+                ac felis donec et odio pellentesque diam volutpat commodo sed
+              </p>
+            </details>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

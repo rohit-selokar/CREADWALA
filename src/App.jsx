@@ -11,6 +11,7 @@ import Ssy from "./pages/calculator/Ssy";
 import Ppf from "./pages/calculator/Ppf";
 import Mf from "./pages/calculator/Mf";
 import Swp from "./pages/calculator/Swp";
+import Lumpsum from "./pages/calculator/Lumpsum";
 const App = () => {
   return (
     <>
@@ -24,8 +25,10 @@ const App = () => {
         <Route path="/rdcalulator" element={<Rd/>}/>
         <Route path="/calculator/ssycalculator" element={<Ssy/>}/>
         <Route path="/ppfcalculator" element={<Ppf/>}/>
+        <Route path="/lumpsumcalculator" element={<Lumpsum/>}/>
         <Route path="/calculator/mfcalculator" element={<Mf/>}/>
         <Route path="/swpcalculator" element={<Swp/>}/>
+        
       </Routes>
 
       <Footer />

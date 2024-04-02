@@ -1,14 +1,14 @@
 import React from "react";
-import pie from "../../assets/sip-pie.png";
-import slider from "../../assets/sip-bar.png";
 import sip from "../../assets/sip.png";
+import pie from "../../assets/lumpsum.png";
+import slider from "../../assets/sip-bar.png";
 
-const Sip = () => {
+const Lumpsum = () => {
   return (
     <>
       <div>
         <p className="m-3 font-manrope lg:m-4 text-[25px] lg:text-[28px] font-semibold xl:pl-6 xl:my-6">
-          SIP Calculator
+          Lumpsum Calculator
         </p>
         <div className="mx-4 md:mx-10 lg:flex justify-center">
           <div className="p-4 bg-[#f8f8f8] border rounded-2xl">
@@ -35,9 +35,9 @@ const Sip = () => {
               </div>
               <div className=" md:ml-36 lg:ml-14 xl:ml-40">
                 <ul>
-                  <li className="p-4 font-semibol">₹ 30,00,000</li>
-                  <li className="p-4 font-semibol">₹ 28,08,477</li>
-                  <li className="p-4 font-semibol">₹ 58,08,477</li>
+                  <li className="p-4 font-semibol">₹ 25,000</li>
+                  <li className="p-4 font-semibol">₹ 52,477</li>
+                  <li className="p-4 font-semibol">₹ 77,477</li>
                 </ul>
               </div>
             </div>
@@ -131,69 +131,79 @@ const Sip = () => {
       {/* theory */}
       <div className="mx-4 md:mx-12 md:my-10 lg:mx-14 xl:mx-20 xl:my-20">
         <div className=" my-8 xl:mr-[420px]">
-          <p className="text-[#000000] text-[20px] font-semibold my-2 xl:text-[30px]">
-            SIP Calculator – Systematic Investment Plan Calculator
-          </p>
           <p className="text-[#434061] text-[18px] leading-loose">
-            Prospective investors can think that SIPs and mutual funds are the
-            same. However, SIPs are merely a method of investing in mutual
-            funds, the other method being a lumpsum. A SIP calculator is a tool
-            that helps you determine the returns you can avail when parking your
-            funds in such investment tools. Systematic Investment Plan or SIP is
-            a process of investing a fixed sum of money in mutual funds at
-            regular intervals. SIPs usually allow you to invest weekly,
-            quarterly, or monthly. 
+            Investments in Mutual Funds can be broadly classified into two
+            types- lumpsum and SIP. A lumpsum investment is when the depositor
+            invests a significant sum of money on a particular mutual fund
+            scheme. SIP or Systematic Investment Plan, on the other hand,
+            entails the investment of smaller amounts on a monthly basis.
+          </p>
+          <p className="text-[#434061] text-[18px] leading-loose mt-6">
+            Both these type of mutual fund investment strategies have their fair
+            share of benefits. Lumpsum investments are particularly preferred by
+            a majority of investors, as there are lesser variables involved and
+            returns are generally on the higher side. To find out the estimated
+            returns on your lumpsum mutual fund investment, you may use a mutual
+            fund lumpsum calculator available online.
           </p>
         </div>
 
         <div className=" my-8 xl:mr-[420px]">
           <p className="text-[#000000] text-[20px] font-semibold my-2 xl:text-[30px]">
-            What is a SIP Calculator?
+            How can a Lump sum Calculator Help You?
           </p>
           <p className="text-[#434061] text-[18px] leading-loose">
-            A SIP calculator is a simple tool that allows individuals to get an
-            idea of the returns on their mutual fund investments made through
-            SIP. SIP investments in mutual funds have become one of the most
-            popular investment options for millennials lately.
-            <p className="mt-4">
-              These mutual fund sip calculators are designed to give potential
-              investors an estimate on their mutual fund investments. However,
-              the actual returns offered by a mutual fund scheme varies
-              depending on various factors. The SIP calculator does not provide
-              clarification for the exit load and expense ratio (if any). 
-            </p>
+            Mutual fund investors can use this calculator to figure out the
+            estimated returns on their investments. Before getting into the
+            benefits of using this calculator, one must know the types of return
+            for a lumpsum investment.
           </p>
-        </div>
+          <ul className="list-disc ml-10 text-[#434061] text-[18px] leading-loose">
+            <li>Absolute return</li>
+            <li>Total return</li>
+            <li>Annualized return</li>
+            <li>Point to point return</li>
+            <li>Trailing return</li>
+            <li>Rolling return</li>
+          </ul>
 
-        <div className=" my-8 xl:mr-[420px]">
-          <p className="text-[#000000] text-[20px] font-semibold my-2 xl:text-[30px]">
-            How can a SIP return calculator help you?
+          <p className="text-[#434061] text-[18px] leading-loose mt-6">
+            It’s paramount that an investor understands all these types of
+            returns in details to avail the maximum benefits from their mutual
+            fund investments. 
           </p>
-          <p className="text-[#434061] text-[18px] leading-loose">
-            SIPs are a more lucrative mode of investing funds compared to a lump
-            sum amount according to several mutual fund experts. It helps you
-            become financially disciplined and create a habit of savings that
-            can benefit you in the future.
-            <p className="mt-4">
-              A SIP calculator online is a beneficial tool, which shows the
-              estimated returns you will earn after the investment tenure.
-            </p>
-            <p className="mt-4">
-              Few of the benefits of SIP calculators include –
-              <ul className="list-decimal ml-8">
-                <li>
-                  Assists you to determine the amount you want to invest in.
-                </li>
-                <li>Tells you the total amount you have invested.</li>
-                <li>Gives an estimated value of the returns</li>
-              </ul>
-            </p>
+
+          <p className="text-[#434061] text-[18px] leading-loose mt-6">
+            Now that you are familiar with the type of returns, it’s time to
+            delve into the benefits of using a lumpsum return calculator:
           </p>
+
+          <ul className="list-disc ml-8 text-[#434061] text-[18px] leading-loose">
+            <li>
+              This calculator provides you with the estimated returns for the
+              whole investment period. You may calculate your investments’
+              1-year, 3-year and 5-year returns using this calculator.
+            </li>
+            <li>
+              It’s incredibly convenient and easy to use. Even a layperson can
+              use this calculator with relative ease.  
+            </li>
+            <li>
+              It offers a reasonably accurate estimate. Note that mutual fund
+              investments are subject to market risks, and cannot be predicted
+              with pinpoint accuracy.
+            </li>
+            <li>
+              An MF lumpsum calculator enables an investor to plan his/her
+              finances better based on the estimated return they are most likely
+              to receive at the end of their investment period.
+            </li>
+          </ul>
         </div>
       </div>
 
       {/* FAQ */}
-      <div className="mx-4 my-14 font-manrope md:mx-14 lg:mx-28 xl:mx-20 xl:mr-[690px]">
+      <div className="mx-4 my-16 font-manrope md:mx-16 lg:mx-28 xl:mx-24 xl:mr-[550px]">
         <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
           FAQs
         </p>
@@ -203,7 +213,7 @@ const Sip = () => {
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  How much can I invest in a SIP?
+                  What is the difference between lumpsum and SIP?
                 </span>
                 <span class="transition group-open:rotate-180 ml-20">
                   <svg
@@ -234,7 +244,7 @@ const Sip = () => {
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  What is the maximum tenure of a SIP?
+                  Which is more advantageous- lumpsum or SIP?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -264,68 +274,7 @@ const Sip = () => {
             <details class="group">
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
-                  Are SIPs similar to mutual funds?
-                </span>
-                <span class="transition group-open:rotate-180">
-                  <svg
-                    fill="none"
-                    height="24"
-                    shape-rendering="geometricPrecision"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
-                facilisis mauris sit amet massa vitae tortor condimentum lacinia
-                quis vel eros donec ac odio tempor orci dapibus ultrices in
-                iaculis nunc sed augue lacus viverra vitae congue eu consequat
-                ac felis donec et odio pellentesque diam volutpat commodo sed
-              </p>
-            </details>
-          </div>
-          <div class="py-3 md:py-5">
-            <details class="group">
-              <summary class="flex cursor-pointer list-none items-center justify-between">
-                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
-                  {" "}
-                  Can I modify my SIP amount?
-                </span>
-                <span class="transition group-open:rotate-180">
-                  <svg
-                    fill="none"
-                    height="24"
-                    shape-rendering="geometricPrecision"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    width="24"
-                  >
-                    <path d="M6 9l6 6 6-6"></path>
-                  </svg>
-                </span>
-              </summary>
-              <p class="group-open:animate-fadeIn mt-3 text-[17px]  xl:text-[18px] text-[#434061]">
-                facilisis mauris sit amet massa vitae tortor condimentum lacinia
-                quis vel eros donec ac odio tempor orci dapibus ultrices in
-                iaculis nunc sed augue lacus viverra vitae congue eu consequat
-                ac felis donec et odio pellentesque diam volutpat commodo sed
-              </p>
-            </details>
-          </div>
-          <div class="py-3 md:py-5">
-            <details class="group">
-              <summary class="flex cursor-pointer list-none items-center justify-between">
-                <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
-                  Do SIP allows only equity mutual funds investments?
+                  Where can I make mutual fund investments?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -356,7 +305,7 @@ const Sip = () => {
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  Can I renew a SIP?
+                  Are mutual fund calculators accurate?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -388,4 +337,4 @@ const Sip = () => {
   );
 };
 
-export default Sip;
+export default Lumpsum;
