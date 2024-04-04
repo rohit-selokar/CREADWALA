@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import Emi_Calculator from "./pages/Emi_Calculator";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import EmiCalculator from "./pages/calculator/EmiCalculator";
+import Emi from "./pages/calculator/Emi";
 import Sip from "./pages/calculator/Sip";
 import Rd from "./pages/calculator/Rd";
 import Ssy from "./pages/calculator/Ssy";
@@ -20,7 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<Emi_Calculator />} />
-        <Route path="/emicalculator" element={<EmiCalculator/>}/>
+        <Route path="/emicalculator" element={<Emi/>}/>
         <Route path="/calculator/sipcalculator" element={<Sip/>}/>
         <Route path="/rdcalulator" element={<Rd/>}/>
         <Route path="/calculator/ssycalculator" element={<Ssy/>}/>

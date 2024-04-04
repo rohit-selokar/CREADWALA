@@ -28,12 +28,68 @@ const Header = () => {
           menuOpen ? "block " : "hidden"
         } lg:static lg:bg-transparent lg:p-0`}
       >
-        <ul className=" flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px]">
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Loans</li>
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Cards</li>
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Insurance</li>
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">Cibil Score</li>
-          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10">
+        <ul className="flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px]">
+          <li className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
+            Loans
+            <span>
+              <svg
+                fill="none"
+                height="14"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="16"
+                className="mt-2 ml-0.5 hover:text-[#1634D4]"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </li>
+          <li className="flex items-center cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
+            Cards
+            <span>
+              <svg
+                fill="none"
+                height="14"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="16"
+                className="mt-1 ml-0.5 hover:text-[#1634D4]"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </li>
+          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
+            Insurance
+          </li>
+          <li className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
+            Cibil Score
+            <span>
+              <svg
+                fill="none"
+                height="14"
+                shape-rendering="geometricPrecision"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                viewBox="0 0 24 24"
+                width="16"
+                className="mt-2 ml-0.5 hover:text-[#1634D4]"
+              >
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </span>
+          </li>
+          <li className="cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
             <Link to="/calculator">EMI Calculator</Link>
           </li>
         </ul>

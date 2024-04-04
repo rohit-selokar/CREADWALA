@@ -1,13 +1,14 @@
 import React from "react";
-import pie from "../../assets/rd-pie.png";
-import slider from "../../assets/rd-bar.png";
-
-const Rd = () => {
+import pie from "../../assets/pie.png";
+import slider from "../../assets/slider.png";
+import arrow from "../../assets/Arrow.png";
+// import faq from "../../assets/faq.png";
+const Emi = () => {
   return (
     <>
       <div className="mx-4 md:mx-16 lg:mx-12 xl:mx-24">
         <p className="font-manrope text-[25px] my-6 lg:my-10 lg:text-[30px] font-medium tracking-wider">
-          Recurring Deposit Calculator
+          EMI Calculators
         </p>
         <div className="lg:flex justify-between">
           <div className="p-6 bg-[#f8f8f8] border rounded-2xl shadow">
@@ -26,16 +27,18 @@ const Rd = () => {
             <div className="flex items-center justify-center md:justify-normal lg:mt-10 text-[#434061]">
               <div>
                 <ul>
-                  <li className="p-2 font-semibold">Total Investment</li>
+                  <li className="p-2 font-semibold">Monthly EMI</li>
                   <li className="p-2 font-semibold">Principal Amount</li>
                   <li className="p-2 font-semibold">Total Interest</li>
+                  <li className="p-2 font-semibold">Total Amount</li>
                 </ul>
               </div>
               <div className=" md:ml-36 lg:ml-14 xl:ml-56">
                 <ul>
-                  <li className="p-2 font-semibol">₹ 18,00,000</li>
-                  <li className="p-2 font-semibol">₹ 1,91,214</li>
-                  <li className="p-2 font-semibol">₹ 19,91,214</li>
+                  <li className="p-2 font-semibol">₹ 19,566</li>
+                  <li className="p-2 font-semibol">₹ 10,00,000</li>
+                  <li className="p-2 font-semibol">₹ 1,73,969</li>
+                  <li className="p-2 font-semibol">₹ 11,73,969</li>
                 </ul>
               </div>
             </div>
@@ -126,61 +129,129 @@ const Rd = () => {
         </div>
       </div>
 
-      {/* Theory */}
-      <div className="mx-4 md:mx-16 md:my-10 lg:mt-16 lg:mx-12 xl:mx-24 xl:my-20 lg:mr-[150px] xl:mr-[520px]">
-        <div className="leading-loose">
-          <p className="text-[#000000] text-[23px] md:text-[27px] font-semibold my-2 xl:text-[30px] mt-8">
-            How can an RD calculator help you?
+      {/* table */}
+      <div className="mx-4 font-manrope md:mx-16 lg:mx-12 xl:mx-24 md:my-10">
+        <p className="text-[25px] lg:text-[30px] my-3 xl:mt-12 tracking-wider">
+          EMI Schedule
+        </p>
+
+        <div className="overflow-x-auto text-center">
+          <table className="border border-[#E0E0E0] min-w-full divide-y divide-gray-200">
+            <thead>
+              <tr className="border-[1px] border-[#E0E0E0] bg-[#FFF3F1] lg:text-[16px] xl:text-[20px] text-[#111111]">
+                <th className=" py-3 font-medium">Month</th>
+                <th className=" py-3 font-medium">Opening Balance</th>
+                <th className=" py-3 font-medium">Interest</th>
+                <th className=" py-3 font-medium">Principal</th>
+                <th className=" py-3 font-medium">Closing Balance</th>
+                <th className=" py-3 font-medium">Loan Paid Till Date (%)</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200 text-[#434061] text-[15px] xl:text-[16px]">
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 px-8 whitespace-nowrap">Mar '24</td>
+                <td className="py-3 px-8 whitespace-nowrap">₹ 10,00,000</td>
+                <td className="py-3 px-8 whitespace-nowrap">₹ 13,333</td>
+                <td className="py-3 px-8 whitespace-nowrap">₹ 1,61,196</td>
+                <td className="py-3 px-8 whitespace-nowrap">₹ 8,38,803</td>
+                <td className="py-3 px-8 whitespace-nowrap">16.39 %</td>
+              </tr>
+
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 whitespace-nowrap">Apr '24</td>
+                <td className="py-3 whitespace-nowrap">₹ 8,38,803</td>
+                <td className="py-3 whitespace-nowrap">₹ 11,184</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,63,345</td>
+                <td className="py-3 whitespace-nowrap">₹ 6,75,457</td>
+                <td className="py-3 whitespace-nowrap">32.89 %</td>
+              </tr>
+
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 whitespace-nowrap">May' 24</td>
+                <td className="py-3 whitespace-nowrap">₹ 6,75,457</td>
+                <td className="py-3 whitespace-nowrap">₹ 9,006</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,65,523</td>
+                <td className="py-3 whitespace-nowrap">₹ 5,09,933</td>
+                <td className="py-3 whitespace-nowrap">49.50 %</td>
+              </tr>
+
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 whitespace-nowrap">Jun '24</td>
+                <td className="py-3 whitespace-nowrap">₹ 5,09,933</td>
+                <td className="py-3 whitespace-nowrap">₹ 6,799</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,67,730</td>
+                <td className="py-3 whitespace-nowrap">₹ 3,42,202</td>
+                <td className="py-3 whitespace-nowrap">66.22 %</td>
+              </tr>
+
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 whitespace-nowrap">Jul' 24</td>
+                <td className="py-3 whitespace-nowrap">₹ 3,42,202</td>
+                <td className="py-3 whitespace-nowrap">₹ 4,563</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,69,967</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,72,235</td>
+                <td className="py-3 whitespace-nowrap">83.06 %</td>
+              </tr>
+
+              <tr className="border border-[#E0E0E0]">
+                <td className="py-3 whitespace-nowrap">Aug '24</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,72,235</td>
+                <td className="py-3 whitespace-nowrap">₹ 2,296</td>
+                <td className="py-3 whitespace-nowrap">₹ 1,72,233</td>
+                <td className="py-3 whitespace-nowrap">₹ 0.00</td>
+                <td className="py-3 whitespace-nowrap">100.00 %</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div
+        className="py-8 text-center xl:pb-20"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right top, #2d4255, #2b3f52, #283c4e, #263a4b, #243748)",
+        }}
+      >
+        <p className="flex flex-col justify-center items-center text-[25px] font-medium tracking-wider text-white xl:text-[30px]">
+          Popular Loans EMI Calculators
+          <img src={arrow} className="w-3 my-5" />
+        </p>
+
+        <div className="mx-16 md:mx-24 lg:mx-28 xl:mx-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Personal Loan EMI Calculator
           </p>
-          <div className="text-[#434061] md:text-[17px] lg:text-[18px]">
-            <p>
-              A recurring deposit, as the name suggests, is a continuing
-              investment. The returns on these deposits can be challenging to
-              track for investors. The interest is compounded quarterly, and
-              there are several variables involved, which makes the calculations
-              multipart.
-            </p>
-            <p className="mt-6">
-              An RD deposit calculator eliminates the hassle of computing its
-              returns manually and enables an investor to know the exact amount
-              their deposits will accrue after the relevant period. 
-            </p>
-
-            <p className="mt-6">
-              The only consideration that the investor has to do manually is
-              the TDS deduction. As per new RBI norms, RDs are also liable for
-              TDS deduction; however, there is no uniformity in its
-              implementation across financial institutions, which is why RD
-              calculators don’t take it into account.
-            </p>
-
-            <p className="mt-6">
-              Apart from that small caveat, an RD amount calculator offers an
-              investor with the following advantages:
-            </p>
-
-            <ul className="list-disc ml-10 mt-6">
-              <li>
-                The calculator enables investors to plan their future finances
-                with greater clarity by providing them with the exact amount
-                their investment will accrue.
-              </li>
-              <li>
-                It’s convenient to use and saves a lot of time for the
-                investors, which they can otherwise use productively.
-              </li>
-              <li>
-                The accuracy of these calculators can never be in question.
-                Accurate estimates are pivotal for prudent financial planning.
-              </li>
-            </ul>
-          </div>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Bike Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Car Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Gold Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Education Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Home Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Business Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Mortage Loan EMI Calculator
+          </p>
+          <p className="p-3 border bg-white rounded-lg xl:p-5 xl:text-[19px]">
+            Car Loan EMI Calculator
+          </p>
         </div>
       </div>
 
       {/* FAQ */}
-      <div className="mx-4 my-10 font-manrope md:mx-16 md:mr-[150px] lg:mr-[350px] lg:mx-12 xl:mx-24 xl:mr-[600px]">
-        <p className="text-[28px] font-semibold text-[#000000] md:text-[30px]">
+      <div className="mx-4 my-8 md:my-16 font-manrope md:mx-16 lg:mx-12 lg:mr-52 xl:mx-24 xl:mr-96">
+        <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
           FAQs
         </p>
         <div class=" divide-y divide-neutral-200 mt-4">
@@ -189,7 +260,7 @@ const Rd = () => {
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  Is TDS applicable on RD?
+                  What sort of loans can I use the EMI calculator for?
                 </span>
                 <span class="transition group-open:rotate-180 ml-20">
                   <svg
@@ -220,7 +291,8 @@ const Rd = () => {
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  What is the minimum amount to start an RD account?
+                  How does the debt-to-income ratio affect my chances of
+                  availing of a loan?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -246,13 +318,11 @@ const Rd = () => {
               </p>
             </details>
           </div>
-
           <div class="py-3 md:py-5">
             <details class="group">
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
-                  {" "}
-                  Can I break my RD prematurely?
+                  What does an EMI consist of?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -278,13 +348,12 @@ const Rd = () => {
               </p>
             </details>
           </div>
-
           <div class="py-3 md:py-5">
             <details class="group">
               <summary class="flex cursor-pointer list-none items-center justify-between">
                 <span className="text-[#434061] text-[17px] lg:text-[18px] xl:text-[19px]">
                   {" "}
-                  What is RD’s range of tenure?
+                  What happens if I fail to pay my EMIs?
                 </span>
                 <span class="transition group-open:rotate-180">
                   <svg
@@ -316,4 +385,4 @@ const Rd = () => {
   );
 };
 
-export default Rd;
+export default Emi;

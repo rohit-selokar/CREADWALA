@@ -7,7 +7,7 @@ import img1 from "../assets/bg-img.png";
 const Third = () => {
   return (
     <div
-      className=" font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16"
+      className="font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16"
       style={{
         backgroundImage: `url(${img1})`,
         backgroundRepeat: "no-repeat",
