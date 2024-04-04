@@ -16,7 +16,7 @@ const Third = () => {
       }}
     >
       <div className="text-center md:text-start">
-        <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[45px]">
+        <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[43px]">
           Get your latest Credit Score
         </p>
         <p className="my-2 xl:my-4 xl:text-[25px]">

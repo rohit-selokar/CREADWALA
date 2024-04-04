@@ -11,7 +11,7 @@ import right from "../assets/blue-right.png";
 
 const Product = () => {
   return (
-    <div className="my-14 xl:my-20 font-manrope mx-10 md:mx-16 lg:mx-20 xl:mx-26">
+    <div className="my-14 xl:my-20 font-manrope mx-10 md:mx-16 lg:mx-20 xl:mx-24">
       <p className="text-[23px] text-center md:text-start font-bold lg:my-10 lg:text-[30px] lg:tracking-wide">
         Check out what <span className="text-[#474FFF]">CREDWALA</span> trending
         products

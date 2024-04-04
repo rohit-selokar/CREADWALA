@@ -5,7 +5,7 @@ import line from "../assets/line-image.png";
 const First = () => {
   return (
     <div
-      className="bg-[#F1F4FF] font-manrope text-center md:flex items-center md:text-start md:px-6 xl:px-16"
+      className="bg-[#F1F4FF] font-manrope text-center md:flex items-center md:text-start md:px-6 xl:px-20"
       style={{
         backgroundImage: `url(${line})`,
         backgroundRepeat: "no-repeat",
