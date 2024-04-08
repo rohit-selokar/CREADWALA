@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <nav className="bg-[#FFFFFF] text-[16px] h-[72px] flex justify-between lg:justify-around px-3 items-center shadow-md sticky top-0 z-50">
-      <div>
+      <div className="xl:pr-20">
         <p className="cursor-pointer">
           <Link to="/">
             <img src={logo} className="w-[180px] h-[40px]" />

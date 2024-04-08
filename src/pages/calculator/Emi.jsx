@@ -1,30 +1,112 @@
-import React from "react";
-import pie from "../../assets/pie.png";
-import slider from "../../assets/slider.png";
+import React, { useState } from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 import arrow from "../../assets/Arrow.png";
-// import faq from "../../assets/faq.png";
+import InputSlider from "react-input-slider";
+
+// Chart.register(ArcElement);
+ChartJS.register(ArcElement, Tooltip, Legend);
+
 const Emi = () => {
+  const data = {
+    labels: ["Principal Amount", "Total Interest"],
+    datasets: [
+      {
+        data: [70, 30],
+        backgroundColor: ["#3551E7", "#E4E4E4"],
+      },
+    ],
+  };
+
+  const [sliderValue, setSliderValue] = useState(1000000);
+  const [interest, setInterest] = useState(16);
+  const [loanTenure, setLoanTenure] = useState(6);
+
+  const handleSliderChange = ({ x }) => {
+    setSliderValue(x);
+  };
+
+  const handleInterestChange = ({ x }) => {
+    setInterest(x);
+  };
+
+  const handleLoanChange = ({ x }) => {
+    setLoanTenure(x);
+  };
+
   return (
     <>
-      <div className="mx-4 md:mx-16 lg:mx-12 xl:mx-24">
+      <div className="mx-4 md:mx-16 lg:mx-12 xl:mx-20">
         <p className="font-manrope text-[25px] my-6 lg:my-10 lg:text-[30px] font-medium tracking-wider">
           EMI Calculators
         </p>
-        <div className="lg:flex justify-between">
-          <div className="p-6 bg-[#f8f8f8] border rounded-2xl shadow">
-            <div className="flex flex-col md:flex-row items-center ">
-              <img
-                src={slider}
-                className="py-4 md:w-[360px] lg:w-[320px] xl:w-[450px]"
-              />
+        <div className="xl:flex justify-between">
+          <div className="md:p-5 bg-[#f8f8f8] border rounded-2xl shadow">
+            <div className=" flex flex-col lg:flex-row items-center ">
+              <div className="p-4 w-[100%] lg:w-[600px] xl:w-[500px] font-semibold text-[17px]">
+                <div className="mt-4">
+                  <p className=" flex items-center justify-between">
+                    Loan Amount:{" "}
+                    <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
+                      Rs {sliderValue}
+                    </button>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={sliderValue}
+                    xmin={0}
+                    xmax={10000000}
+                    onChange={handleSliderChange}
+                    style={{ width: "100%" }}
+                  />
+                </div>
 
-              <img
-                src={pie}
-                className="my-6 w-[220px] md:w-[190px] md:ml-8 lg:w-[180px] lg:ml-4 xl:w-[220px] xl:mx-14"
-              />
+                <div className="mt-12">
+                  <p className="flex items-center justify-between">
+                    Rate of Interest:{" "}
+                    <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
+                      {interest} %
+                    </button>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={interest}
+                    xmin={0}
+                    xmax={30}
+                    onChange={handleInterestChange}
+                    style={{ width: "100%" }}
+                  />
+                </div>
+
+                <div className="mt-12">
+                  <p className="flex items-center justify-between">
+                    Loan Tensure:
+                    <div>
+                      <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
+                        {loanTenure}
+                      </button>
+                      <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
+                        Months
+                      </button>
+                    </div>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={loanTenure}
+                    xmin={0}
+                    xmax={100}
+                    onChange={handleLoanChange}
+                    style={{ width: "100%" }}
+                  />
+                </div>
+              </div>
+
+              <div className="m-4">
+                <Doughnut data={data} className="w-[290px]" />
+              </div>
             </div>
 
-            <div className="flex items-center justify-center md:justify-normal lg:mt-10 text-[#434061]">
+            <div className="py-4 flex items-center justify-center md:justify-normal lg:mt-10 text-[#434061]">
               <div>
                 <ul>
                   <li className="p-2 font-semibold">Monthly EMI</li>
@@ -44,7 +126,7 @@ const Emi = () => {
             </div>
           </div>
 
-          <div className="mx-6 md:mx-0 border my-6 lg:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-0">
+          <div className="mx-6 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-[39rem] xl:mr-0">
             <table>
               <thead>
                 <tr>

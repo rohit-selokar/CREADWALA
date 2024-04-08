@@ -3,8 +3,12 @@ import React from "react";
 import img2 from "../assets/icon.png";
 import img3 from "../assets/head shape.png";
 import img1 from "../assets/bg-img.png";
+import "../app.css";
+// import "../script.js"
+
 
 const Third = () => {
+  
   return (
     <div
       className="font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16"
@@ -22,7 +26,11 @@ const Third = () => {
         <p className="my-2 xl:my-4 xl:text-[25px]">
           One powerful number that puts you in control
         </p>
-        <button className="bg-[#3b56ef] text-[15px] text-white w-[210px] h-[39px] xl:text-[20px] xl:w-[290px] xl:h-[48px] my-4 lg:my-8 rounded-full">
+        <button
+          className="ripple text-[15px] text-white w-[210px] h-[39px] xl:text-[20px] xl:w-[290px] xl:h-[48px] my-4 lg:my-8 rounded-full"
+          // style={{ background: "linear-gradient(to right,#3753E9,#102ED0)" }}
+          
+        >
           Get Free Your Credit Score
         </button>
       </div>
