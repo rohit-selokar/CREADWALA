@@ -10,7 +10,7 @@ const Header = () => {
   };
 
   return (
-    <nav className="bg-[#FFFFFF] text-[16px] h-[72px] flex justify-between lg:justify-around px-3 items-center shadow-md sticky top-0 z-50">
+    <nav className="bg-[#FFFFFF] text-[16px] h-[72px] flex justify-between lg:justify-around px-3 xl:px-0 items-center shadow-md sticky top-0 z-50">
       <div className="xl:pr-20">
         <p className="cursor-pointer">
           <Link to="/">

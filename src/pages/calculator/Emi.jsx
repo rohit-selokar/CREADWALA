@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import arrow from "../../assets/Arrow.png";
 import InputSlider from "react-input-slider";
-
-// Chart.register(ArcElement);
 ChartJS.register(ArcElement, Tooltip, Legend);
+
+import arrow from "../../assets/Arrow.png";
+// Chart.register(ArcElement);
 
 const Emi = () => {
   const data = {
@@ -18,73 +18,99 @@ const Emi = () => {
     ],
   };
 
-  const [sliderValue, setSliderValue] = useState(1000000);
-  const [interest, setInterest] = useState(16);
+  const [loanAmount, setLoanAmount] = useState(100000);
+  const [rateOfInterest, setRateOfInterest] = useState(15);
   const [loanTenure, setLoanTenure] = useState(6);
 
-  const handleSliderChange = ({ x }) => {
-    setSliderValue(x);
+  const handleLoanAmountChange = (newValue) => {
+    setLoanAmount(newValue);
   };
 
-  const handleInterestChange = ({ x }) => {
-    setInterest(x);
+  const handleRateOfInterest = (newValue) => {
+    setRateOfInterest(newValue);
   };
 
-  const handleLoanChange = ({ x }) => {
-    setLoanTenure(x);
+  const handleLoanTensure = (newValue) => {
+    setLoanTenure(newValue);
   };
 
   return (
     <>
-      <div className="mx-4 md:mx-16 lg:mx-12 xl:mx-20">
+      <div className="mx-4 md:mx-16 xl:mx-20">
         <p className="font-manrope text-[25px] my-6 lg:my-10 lg:text-[30px] font-medium tracking-wider">
           EMI Calculators
         </p>
         <div className="xl:flex justify-between">
           <div className="md:p-5 bg-[#f8f8f8] border rounded-2xl shadow">
-            <div className=" flex flex-col lg:flex-row items-center ">
+            <div className="flex flex-col lg:flex-row items-center ">
               <div className="p-4 w-[100%] lg:w-[600px] xl:w-[500px] font-semibold text-[17px]">
                 <div className="mt-4">
                   <p className=" flex items-center justify-between">
-                    Loan Amount:{" "}
-                    <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                      Rs {sliderValue}
-                    </button>
+                    Loan Amount
+                    <div>
+                      <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                        ₹
+                      </button>
+                      <input
+                        type="number"
+                        className=" p-2 w-28 border border-[#B9BABD] rounded-r-md"
+                        value={loanAmount}
+                        onChange={(e) =>
+                          setLoanAmount(parseInt(e.target.value))
+                        }
+                      />
+                    </div>
                   </p>
                   <InputSlider
                     axis="x"
-                    x={sliderValue}
+                    x={loanAmount}
                     xmin={0}
-                    xmax={10000000}
-                    onChange={handleSliderChange}
-                    style={{ width: "100%" }}
+                    xmax={1000000}
+                    onChange={(newValue) => handleLoanAmountChange(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
                   />
                 </div>
 
                 <div className="mt-12">
                   <p className="flex items-center justify-between">
-                    Rate of Interest:{" "}
-                    <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                      {interest} %
-                    </button>
+                    Rate of Interest (p.a)
+                    <div>
+                      <input
+                        className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                        type="number"
+                        value={rateOfInterest}
+                        onChange={(e) =>
+                          setRateOfInterest(parseInt(e.target.value))
+                        }
+                      />
+                      <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                        %
+                      </button>
+                    </div>
                   </p>
                   <InputSlider
                     axis="x"
-                    x={interest}
+                    x={rateOfInterest}
                     xmin={0}
                     xmax={30}
-                    onChange={handleInterestChange}
-                    style={{ width: "100%" }}
+                    onChange={(newValue) => handleRateOfInterest(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
                   />
                 </div>
 
                 <div className="mt-12">
                   <p className="flex items-center justify-between">
-                    Loan Tensure:
+                    Loan Tensure
                     <div>
-                      <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                        {loanTenure}
-                      </button>
+                      <input
+                        type="number"
+                        className="border border-[#B9BABD] p-2 rounded-md w-20 text-center"
+                        value={loanTenure}
+                        onChange={(e) =>
+                          setLoanTenure(parseInt(e.target.value))
+                        }
+                      />
+
                       <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
                         Months
                       </button>
@@ -95,8 +121,8 @@ const Emi = () => {
                     x={loanTenure}
                     xmin={0}
                     xmax={100}
-                    onChange={handleLoanChange}
-                    style={{ width: "100%" }}
+                    onChange={(newValue) => handleLoanTensure(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
                   />
                 </div>
               </div>
@@ -126,7 +152,7 @@ const Emi = () => {
             </div>
           </div>
 
-          <div className="mx-6 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-[39rem] xl:mr-0">
+          <div className="mx-6 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-[37rem] xl:mr-0">
             <table>
               <thead>
                 <tr>
@@ -212,7 +238,7 @@ const Emi = () => {
       </div>
 
       {/* table */}
-      <div className="mx-4 font-manrope md:mx-16 lg:mx-12 xl:mx-24 md:my-10">
+      <div className="mx-4 font-manrope md:mx-16 xl:mx-20 md:my-10">
         <p className="text-[25px] lg:text-[30px] my-3 xl:mt-12 tracking-wider">
           EMI Schedule
         </p>
@@ -332,7 +358,7 @@ const Emi = () => {
       </div>
 
       {/* FAQ */}
-      <div className="mx-4 my-8 md:my-16 font-manrope md:mx-16 lg:mx-12 lg:mr-52 xl:mx-24 xl:mr-96">
+      <div className="mx-4 my-8 md:my-16 font-manrope md:mx-16 lg:mr-52 xl:mx-20 xl:mr-96">
         <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
           FAQs
         </p>

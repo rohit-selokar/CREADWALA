@@ -1,30 +1,132 @@
-import React from "react";
-import ssy from "../../assets/ssy.png";
-import pie from "../../assets/ssy-pie.png";
-import slider from "../../assets/ssy-bar.png";
+import React, { useState } from "react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
+import InputSlider from "react-input-slider";
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const Ssy = () => {
+  const data = {
+    labels: ["Principal Amount", "Total Interest"],
+    datasets: [
+      {
+        data: [70, 30],
+        backgroundColor: ["#3551E7", "#E4E4E4"],
+      },
+    ],
+  };
+
+  const [loanAmount, setLoanAmount] = useState(100000);
+  const [rateOfInterest, setRateOfInterest] = useState(15);
+  const [loanTenure, setLoanTenure] = useState(2018);
+
+  const handleLoanAmountChange = (newValue) => {
+    setLoanAmount(newValue);
+  };
+
+  const handleRateOfInterest = (newValue) => {
+    setRateOfInterest(newValue);
+  };
+
+  const handleLoanTensure = (newValue) => {
+    setLoanTenure(newValue);
+  };
+
   return (
     <>
-      <div className="mx-4 md:mx-16 lg:mx-12 xl:mx-24">
+      <div className="mx-4 md:mx-16 xl:mx-20">
         <p className="font-manrope text-[25px] my-6 lg:my-10 lg:text-[30px] font-medium tracking-wider">
           Sukanya Samariddhi Yojana Calculator
         </p>
-        <div className="lg:flex justify-between">
-          <div className="p-6 bg-[#f8f8f8] border rounded-2xl shadow">
-            <div className="flex flex-col md:flex-row items-center ">
-              <div>
-                <img src={ssy} />
-                <img
-                  src={slider}
-                  className="py-4 md:w-[360px] lg:w-[320px] xl:w-[450px]"
-                />
+        <div className="xl:flex justify-between">
+          <div className="p-5 bg-[#f8f8f8] border rounded-2xl shadow">
+            <p className="text-[18px] text-[#434061] ml-4">
+              Latest SSY Rate = 8.2%
+            </p>
+
+            <div className="flex flex-col lg:flex-row items-center ">
+              <div className="p-4 w-[100%] lg:w-[600px] xl:w-[500px] font-semibold text-[17px]">
+                <div>
+                  <p className=" flex items-center justify-between">
+                    Yearly Investment
+                    <div>
+                      <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                        ₹
+                      </button>
+                      <input
+                        type="number"
+                        className=" p-2 w-28 border border-[#B9BABD] rounded-r-md"
+                        value={loanAmount}
+                        onChange={(e) =>
+                          setLoanAmount(parseInt(e.target.value))
+                        }
+                      />
+                    </div>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={loanAmount}
+                    xmin={0}
+                    xmax={1000000}
+                    onChange={(newValue) => handleLoanAmountChange(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
+                  />
+                </div>
+
+                <div className="mt-12">
+                  <p className="flex items-center justify-between">
+                    Girl’s Age
+                    <div>
+                      <input
+                        className="border border-[#B9BABD] p-2 rounded-md bg-white w-16 mx-3 text-center"
+                        type="number"
+                        value={rateOfInterest}
+                        onChange={(e) =>
+                          setRateOfInterest(parseInt(e.target.value))
+                        }
+                      />
+                      <button className="bg-[#3551E7] text-white px-5 p-2 border border-[#B9BABD] rounded-md">
+                        Years
+                      </button>
+                    </div>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={rateOfInterest}
+                    xmin={0}
+                    xmax={30}
+                    onChange={(newValue) => handleRateOfInterest(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
+                  />
+                </div>
+
+                <div className="mt-12">
+                  <p className="flex items-center justify-between">
+                    Start Period
+                    <div>
+                      <input
+                        type="number"
+                        className="border border-[#B9BABD] p-2 rounded-md w-20 text-center"
+                        value={loanTenure}
+                        onChange={(e) =>
+                          setLoanTenure(parseInt(e.target.value))
+                        }
+                      />
+                    </div>
+                  </p>
+                  <InputSlider
+                    axis="x"
+                    x={loanTenure}
+                    xmin={1500}
+                    xmax={3000}
+                    onChange={(newValue) => handleLoanTensure(newValue.x)}
+                    style={{ width: "100%", height: "4px" }}
+                  />
+                </div>
               </div>
 
-              <img
-                src={pie}
-                className="my-6 w-[220px] md:w-[190px] md:ml-8 lg:w-[180px] lg:ml-4 xl:w-[220px] xl:mx-14"
-              />
+              <div className="m-4">
+                <Doughnut data={data} className="w-[290px]" />
+              </div>
             </div>
 
             <div className="flex items-center justify-center md:justify-normal lg:mt-10 text-[#434061]">
@@ -47,7 +149,7 @@ const Ssy = () => {
             </div>
           </div>
 
-          <div className="mx-6 md:mx-0 border my-6 lg:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-0">
+          <div className="mx-6 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-[37rem] xl:mr-0">
             <table>
               <thead>
                 <tr>
@@ -133,7 +235,7 @@ const Ssy = () => {
       </div>
 
       {/* Theory */}
-      <div className="mx-4 md:mx-16 md:my-10 lg:mt-16 lg:mx-12 xl:mx-24 xl:my-20 lg:mr-[150px] xl:mr-[520px] leading-loose">
+      <div className="mx-4 md:mx-16 md:my-10 lg:mt-16 xl:mx-20 xl:my-20 lg:mr-[150px] xl:mr-[520px] leading-loose">
         <p className="text-[#434061] md:text-[17px] lg:text-[18px]">
           Investments in Mutual Funds can be broadly classified into two
           types- lumpsum and SIP. A lumpsum investment is when the depositor
@@ -193,7 +295,7 @@ const Ssy = () => {
       </div>
 
       {/* FAQ */}
-      <div className="mx-4 my-10 font-manrope md:mx-16 md:mr-[150px] lg:mr-[350px] lg:mx-12 xl:mx-24 xl:mr-[600px]">
+      <div className="mx-4 my-10 font-manrope md:mx-16 md:mr-[150px] lg:mr-[350px] xl:mx-20 xl:mr-[600px]">
         <p className="text-[28px] font-semibold text-[#000000] md:text-[30px]">
           FAQs
         </p>
