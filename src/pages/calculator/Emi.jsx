@@ -35,8 +35,8 @@ const Emi = () => {
   };
 
   return (
-    <>
-      <div className="mx-4 md:mx-16 xl:mx-20">
+    <div className="container mx-auto max-w-7xl">
+      <div className="mx-2">
         <p className="font-manrope text-[25px] my-6 lg:my-10 lg:text-[30px] font-medium tracking-wider">
           EMI Calculators
         </p>
@@ -132,7 +132,7 @@ const Emi = () => {
               </div>
             </div>
 
-            <div className="py-4 flex items-center justify-center md:justify-normal lg:mt-10 text-[#434061]">
+            <div className="py-4 flex items-center justify-around text-[#434061] lg:w-[60%] lg:justify-between">
               <div>
                 <ul>
                   <li className="p-2 font-semibold">Monthly EMI</li>
@@ -152,7 +152,7 @@ const Emi = () => {
             </div>
           </div>
 
-          <div className="mx-6 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-72 lg:mr-[37rem] xl:mr-0">
+          <div className="mx-6 mr-12 md:mx-0 border my-6 xl:my-0 rounded-2xl font-inter text-center md:mr-[25rem] lg:mr-[44rem] xl:mr-0">
             <table>
               <thead>
                 <tr>
@@ -238,7 +238,7 @@ const Emi = () => {
       </div>
 
       {/* table */}
-      <div className="mx-4 font-manrope md:mx-16 xl:mx-20 md:my-10">
+      <div className="mx-2 font-manrope">
         <p className="text-[25px] lg:text-[30px] my-3 xl:mt-12 tracking-wider">
           EMI Schedule
         </p>
@@ -315,7 +315,7 @@ const Emi = () => {
       </div>
 
       <div
-        className="py-8 text-center xl:pb-20"
+        className="py-8 my-6 text-center"
         style={{
           backgroundImage:
             "linear-gradient(to right top, #2d4255, #2b3f52, #283c4e, #263a4b, #243748)",
@@ -358,7 +358,7 @@ const Emi = () => {
       </div>
 
       {/* FAQ */}
-      <div className="mx-4 my-8 md:my-16 font-manrope md:mx-16 lg:mr-52 xl:mx-20 xl:mr-96">
+      <div className="mx-2 my-6">
         <p className="text-[25px] font-semibold text-[#000000] md:text-[30px]">
           FAQs
         </p>
@@ -489,7 +489,7 @@ const Emi = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
