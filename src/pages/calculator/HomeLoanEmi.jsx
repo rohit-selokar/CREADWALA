@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import React, { useState, useEffect } from 'react';
 import { Doughnut } from "react-chartjs-2";
 import InputSlider from "react-input-slider";
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const HomeLoanEmi = () => {
   const calculators = [
@@ -21,30 +19,47 @@ const HomeLoanEmi = () => {
     "NPS Calculator"
   ];
 
-  const data = {
-    labels: ["Principal Amount", "Total Interest"],
-    datasets: [
-      {
-        data: [80, 20],
-        backgroundColor: ["#3551E7", "#E4E4E4"],
-      },
-    ],
-  };
-
-  const [LoanAmount, setLoanAmount] = useState(1000000);
-  const [interest, setInterest] = useState(6.5);
+  const [loanAmount, setLoanAmount] = useState(1000000);
+  const [interestRate, setInterestRate] = useState(6.5);
   const [loanTenure, setLoanTenure] = useState(5);
+  const [emi, setEmi] = useState(0);
+
+  useEffect(() => {
+    calculateEmi();
+  }, [loanAmount, interestRate, loanTenure]);
+
+  const calculateEmi = () => {
+    const principal = loanAmount;
+    const rate = interestRate / 12 / 100; // Monthly interest rate
+    const tenureMonths = loanTenure * 12; // Loan tenure in months
+
+    const emi =
+      (principal * rate * Math.pow(1 + rate, tenureMonths)) /
+      (Math.pow(1 + rate, tenureMonths) - 1);
+
+    setEmi(emi.toFixed(2));
+  };
 
   const handleLoanAmount = ({ x }) => {
     setLoanAmount(x);
   };
 
-  const handleInterestChange = ({ x }) => {
-    setInterest(x);
+  const handleInterestRateChange = ({ x }) => {
+    setInterestRate(x);
   };
 
-  const handleLoanChange = ({ x }) => {
+  const handleLoanTenureChange = ({ x }) => {
     setLoanTenure(x);
+  };
+
+  const data = {
+    labels: ["Principal Amount", "Total Interest"],
+    datasets: [
+      {
+        data: [loanAmount, emi * loanTenure - loanAmount],
+        backgroundColor: ["#3551E7", "#E4E4E4"],
+      },
+    ],
   };
 
   return (
@@ -62,13 +77,23 @@ const HomeLoanEmi = () => {
                     <div>
                       <p className=" flex items-center justify-between">
                         Loan Amount{" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          Rs {LoanAmount}
-                        </button>
+                        <div>
+                          <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                            ₹
+                          </button>
+                          <input
+                            type="number"
+                            className=" p-2 w-28 border border-[#B9BABD] rounded-r-md"
+                            value={loanAmount}
+                            onChange={(e) =>
+                              handleLoanAmount({ x: parseInt(e.target.value) })
+                            }
+                          />
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={LoanAmount}
+                        x={loanAmount}
                         xmin={0}
                         xmax={2000000}
                         onChange={handleLoanAmount}
@@ -79,29 +104,44 @@ const HomeLoanEmi = () => {
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
                         Rate of Interest (p.a){" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          {interest} %
-                        </button>
+                        <div>
+                          <input
+                            className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                            type="number"
+                            value={interestRate}
+                            onChange={(e) =>
+                              handleInterestRateChange({ x: parseInt(e.target.value) })
+                            }
+                          />
+                          <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                            %
+                          </button>
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={interest}
+                        x={interestRate}
                         xmin={0}
                         xmax={30}
-                        onChange={handleInterestChange}
+                        onChange={handleInterestRateChange}
                         style={{ width: "100%" }}
                       />
                     </div>
 
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
-                        Loan Tenure:
+                        Loan Tenure
                         <div>
-                          <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                            {loanTenure}
-                          </button>
-                          <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
-                            Year
+                          <input
+                            type="number"
+                            className="border border-[#B9BABD] p-2 rounded-l-md w-14 text-center"
+                            value={loanTenure}
+                            onChange={(e) =>
+                              handleLoanTenureChange({ x: parseInt(e.target.value) })
+                            }
+                          />
+                          <button className="border border-[#3551E7] bg-[#3551E7] text-white p-2 px-4 rounded-r-md">
+                            Years
                           </button>
                         </div>
                       </p>
@@ -110,7 +150,7 @@ const HomeLoanEmi = () => {
                         x={loanTenure}
                         xmin={0}
                         xmax={15}
-                        onChange={handleLoanChange}
+                        onChange={handleLoanTenureChange}
                         style={{ width: "100%" }}
                       />
 
@@ -125,10 +165,10 @@ const HomeLoanEmi = () => {
                         </div>
                         <div className="flex flex-col justify-end ml-auto">
                           <ul>
-                            <li className="p-2">₹ 19,566</li>
-                            <li className="p-2">₹ 10,00,000</li>
-                            <li className="p-2">₹ 1,73,969</li>
-                            <li className="p-2">₹ 11,73,969</li>
+                            <li className="p-2">₹ {emi}</li>
+                            <li className="p-2">₹ {loanAmount}</li>
+                            <li className="p-2">₹ {(emi * loanTenure - loanAmount).toFixed(2)}</li>
+                            <li className="p-2">₹ {(Number(emi) * loanTenure).toFixed(2)}</li>
                           </ul>
                         </div>
                       </div>
@@ -142,7 +182,7 @@ const HomeLoanEmi = () => {
                 </div>
               </div>
               <h2 className="text-xl lg:text-3xl font-semibold mt-5">
-                Car Loan EMI Calculator
+                Home Loan EMI Calculator
               </h2>
               <div className="text-base text-neutral-600">
                 <p>
@@ -158,12 +198,12 @@ const HomeLoanEmi = () => {
                   A Home Loan EMI Calculator can significantly aid individuals in various aspects of their home buying journey. Primarily, it serves as a crucial tool for financial planning by offering a clear estimate of the monthly installment required for repaying a home loan. This estimation enables effective budgeting, ensuring that borrowers can manage their finances efficiently. Moreover, the calculator facilitates an in-depth assessment of affordability by allowing users to input different loan amounts, interest rates, and tenures to determine suitable repayment options. By comparing the EMIs for various scenarios, borrowers can make informed decisions regarding loan amounts and repayment terms. Additionally, the calculator provides insights into the loan repayment structure, breaking down each installment into principal and interest components. This understanding empowers borrowers to comprehend how their payments contribute to reducing the principal balance and servicing interest charges. Ultimately, by using a Home Loan EMI Calculator, individuals can prepare thoroughly for the loan application process, armed with accurate financial information to approach lenders confidently. It ensures that borrowers select loan options aligned with their financial objectives, fostering a smoother and more informed home buying experience.
                 </p>
               </div>
-              <div className=" w-full bg-white pt-5 pb-5 ring-gray-900/5 sm:max-w-10xl sm:rounded-lg">
+              <div className=" w-full bg-white pt-5 pb-5 ring-gray-900/5 sm:max-w-10xl sm:rounded-lg text-neutral-600">
                 <h2 className=" text-2xl font-semibold tracking-tight md:text-3xl">FAQ</h2>
                 <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200">
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span> What is EMI?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -182,7 +222,7 @@ const HomeLoanEmi = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>How is EMI calculated?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -202,7 +242,7 @@ const HomeLoanEmi = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Why use the online EMI calculator?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -220,7 +260,7 @@ const HomeLoanEmi = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>How many times can you use the calculator?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -238,7 +278,7 @@ const HomeLoanEmi = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Is the EMI amount fixed?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -258,7 +298,7 @@ const HomeLoanEmi = () => {
               </div>
             </div>
           </div>
-          <div className="">
+          <div>
             <div className="bg-white flex flex-col gap-0 min-w-0 lg:min-w-[110%] border rounded-lg border-gray-300 border-l-1 border-r-1">
               <div className="bg-gray-200 py-3 px-5 text-lg font-medium text-center">
                 Popular Calculators
@@ -273,6 +313,7 @@ const HomeLoanEmi = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );

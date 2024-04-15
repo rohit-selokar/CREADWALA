@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import InputSlider from "react-input-slider";
-ChartJS.register(ArcElement, Tooltip, Legend);
 
-const MortageLoan = () => {
+const MortgageLoan = () => {
   const calculators = [
     "SIP Calculator",
     "Lumpsum Calculator",
@@ -20,18 +18,9 @@ const MortageLoan = () => {
     "HRA Calculator",
     "NPS Calculator"
   ];
-  const data = {
-    labels: ["Loan Amount", "Total Interest"],
-    datasets: [
-      {
-        data: [80, 20],
-        backgroundColor: ["#3551E7", "#E4E4E4"],
-      },
-    ],
-  };
 
-  const [LoanAmount, setLoanAmount] = useState(1000000);
-  const [interest, setInterest] = useState(6.5);
+  const [loanAmount, setLoanAmount] = useState(1000000);
+  const [interestRate, setInterestRate] = useState(6.5);
   const [loanTenure, setLoanTenure] = useState(5);
 
   const handleLoanAmount = ({ x }) => {
@@ -39,18 +28,32 @@ const MortageLoan = () => {
   };
 
   const handleInterestChange = ({ x }) => {
-    setInterest(x);
+    setInterestRate(x);
   };
 
-  const handleLoanChange = ({ x }) => {
+  const handleLoanTenureChange = ({ x }) => {
     setLoanTenure(x);
+  };
+
+  const monthlyEMI = ((loanAmount * (interestRate / 12) / (1 - Math.pow(1 + (interestRate / 12), -loanTenure * 12))).toFixed(2));
+  const totalInterest = (((loanAmount * interestRate * loanTenure) / 100).toFixed(2));
+  const totalAmount = (parseInt(loanAmount) + parseInt(totalInterest)).toFixed(2);
+
+  const data = {
+    labels: ["Loan Amount", "Total Interest"],
+    datasets: [
+      {
+        data: [loanAmount, totalInterest],
+        backgroundColor: ["#3551E7", "#E4E4E4"],
+      },
+    ],
   };
 
   return (
     <div className="py-10 px-3 md:px-10 lg:px-20">
       <div className="container mx-auto">
         <div className="text-3xl mt-2 ml-2">
-          Mortage Loan EMI Calculator
+          Mortgage Loan EMI Calculator
         </div>
         <div className="flex flex-col lg:flex-row py-10">
           <div className="w-full lg:w-3/4 bg-white overflow-hidden flex flex-col items-start justify-start gap-0 tracking-normal">
@@ -59,15 +62,25 @@ const MortageLoan = () => {
                 <div className="flex flex-col lg:flex-row items-center justify-center lg:items-start lg:justify-start mt-5">
                   <div className="p-8 w-[100%] lg:w-[100%] xl:w-[200%] font-semibold text-l">
                     <div>
-                      <p className=" flex items-center justify-between">
+                      <p className="flex items-center justify-between">
                         Loan Amount{" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          Rs {LoanAmount}
-                        </button>
+                        <div>
+                          <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                            ₹
+                          </button>
+                          <input
+                            type="number"
+                            className=" p-2 w-24 border border-[#B9BABD] rounded-r-md"
+                            value={loanAmount}
+                            onChange={(e) =>
+                              setLoanAmount(parseInt(e.target.value))
+                            }
+                          />
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={LoanAmount}
+                        x={loanAmount}
                         xmin={0}
                         xmax={2000000}
                         onChange={handleLoanAmount}
@@ -78,13 +91,23 @@ const MortageLoan = () => {
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
                         Rate of Interest (p.a){" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          {interest} %
-                        </button>
+                        <div>
+                          <input
+                            className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                            type="number"
+                            value={interestRate}
+                            onChange={(e) =>
+                              setInterestRate(parseInt(e.target.value))
+                            }
+                          />
+                          <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                            %
+                          </button>
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={interest}
+                        x={interestRate}
                         xmin={0}
                         xmax={30}
                         onChange={handleInterestChange}
@@ -94,13 +117,18 @@ const MortageLoan = () => {
 
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
-                        Loan Tenure:
+                        Loan Tenure
                         <div>
-                          <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                            {loanTenure}
-                          </button>
-                          <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
-                            Year
+                          <input
+                            type="number"
+                            className="border border-[#B9BABD] p-2 rounded-l-md w-14 text-center"
+                            value={loanTenure}
+                            onChange={(e) =>
+                              setLoanTenure(parseInt(e.target.value))
+                            }
+                          />
+                          <button className="border border-[#3551E7] bg-[#3551E7] text-white p-2 px-4 rounded-r-md">
+                            Years
                           </button>
                         </div>
                       </p>
@@ -109,7 +137,7 @@ const MortageLoan = () => {
                         x={loanTenure}
                         xmin={0}
                         xmax={15}
-                        onChange={handleLoanChange}
+                        onChange={handleLoanTenureChange}
                         style={{ width: "100%" }}
                       />
 
@@ -123,9 +151,9 @@ const MortageLoan = () => {
                         </div>
                         <div className="flex flex-col justify-end ml-auto">
                           <ul>
-                            <li className="p-2">₹ 19,566</li>
-                            <li className="p-2">₹ 1,73,969</li>
-                            <li className="p-2">₹ 11,73,969</li>
+                            <li className="p-2">₹ {monthlyEMI}</li>
+                            <li className="p-2">₹ {totalInterest}</li>
+                            <li className="p-2">₹ {totalAmount}</li>
                           </ul>
                         </div>
                       </div>
@@ -159,10 +187,10 @@ const MortageLoan = () => {
               </div>
               <div className=" w-full bg-white pt-5 pb-5 ring-gray-900/5 sm:max-w-10xl sm:rounded-lg">
                 <h2 className=" text-2xl font-semibold tracking-tight md:text-3xl">FAQ</h2>
-                <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200">
+                <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200 text-neutral-600">
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>What Is A Mortgage Loan?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -181,7 +209,7 @@ const MortageLoan = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Can I Foreclose My Mortgage Loan Payments?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -201,7 +229,7 @@ const MortageLoan = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>What If I’m Unable To Pay My Mortgage Loan EMI?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -241,4 +269,4 @@ const MortageLoan = () => {
   );
 };
 
-export default MortageLoan;
+export default MortgageLoan;

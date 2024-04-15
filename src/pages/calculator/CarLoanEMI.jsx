@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import InputSlider from "react-input-slider";
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const CarLoanEMI = () => {
   const calculators = [
@@ -20,30 +18,31 @@ const CarLoanEMI = () => {
     "HRA Calculator",
     "NPS Calculator"
   ];
-  const data = {
-    labels: ["Principal Amount", "Total Interest"],
-    datasets: [
-      {
-        data: [80, 20],
-        backgroundColor: ["#3551E7", "#E4E4E4"],
-      },
-    ],
-  };
 
   const [LoanAmount, setLoanAmount] = useState(1000000);
   const [interest, setInterest] = useState(6.5);
   const [loanTenure, setLoanTenure] = useState(5);
 
-  const handleLoanAmount = ({ x }) => {
+  const handleLoanAmountChange = (x) => {
     setLoanAmount(x);
   };
 
-  const handleInterestChange = ({ x }) => {
+  const handleInterestChange = (x) => {
     setInterest(x);
   };
 
-  const handleLoanChange = ({ x }) => {
+  const handleLoanTenureChange = (x) => {
     setLoanTenure(x);
+  };
+
+  const data = {
+    labels: ["Principal Amount", "Total Interest"],
+    datasets: [
+      {
+        data: [LoanAmount, (LoanAmount * interest * loanTenure) / 100],
+        backgroundColor: ["#3551E7", "#E4E4E4"],
+      },
+    ],
   };
 
   return (
@@ -60,47 +59,73 @@ const CarLoanEMI = () => {
                   <div className="p-8 w-[100%] lg:w-[100%] xl:w-[200%] font-semibold text-l">
                     <div>
                       <p className=" flex items-center justify-between">
-                        Loan Amount{" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          Rs {LoanAmount}
-                        </button>
+                        Loan Amount
+                        <div>
+                          <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                            ₹
+                          </button>
+                          <input
+                            type="number"
+                            className=" p-2 w-24 border border-[#B9BABD] rounded-r-md"
+                            value={LoanAmount}
+                            onChange={(e) =>
+                              setLoanAmount(parseInt(e.target.value))
+                            }
+                          />
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
                         x={LoanAmount}
                         xmin={0}
                         xmax={2000000}
-                        onChange={handleLoanAmount}
+                        onChange={({ x }) => handleLoanAmountChange(x)}
                         style={{ width: "100%" }}
                       />
                     </div>
 
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
-                        Rate of Interest (p.a){" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          {interest} %
-                        </button>
+                        Rate of Interest (p.a)
+                        <div>
+                          <input
+                            className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                            type="number"
+                            value={interest}
+                            onChange={(e) =>
+                              setInterest(parseInt(e.target.value))
+                            }
+                          />
+                          <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                            %
+                          </button>
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
                         x={interest}
                         xmin={0}
                         xmax={30}
-                        onChange={handleInterestChange}
+                        onChange={({ x }) => handleInterestChange(x)}
                         style={{ width: "100%" }}
                       />
                     </div>
 
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
-                        Loan Tenure:
+                        Loan Tensure
                         <div>
-                          <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                            {loanTenure}
-                          </button>
-                          <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
-                            Year
+                          <input
+                            type="number"
+                            className="border border-[#B9BABD] p-2 rounded-l-md w-14 text-center"
+                            value={loanTenure}
+                            onChange={(e) =>
+                              setLoanTenure(parseInt(e.target.value))
+                            }
+                          />
+
+                          <button className="border border-[#3551E7] bg-[#3551E7] text-white p-2 px-4 rounded-r-md">
+                            Years
                           </button>
                         </div>
                       </p>
@@ -108,8 +133,8 @@ const CarLoanEMI = () => {
                         axis="x"
                         x={loanTenure}
                         xmin={0}
-                        xmax={15}
-                        onChange={handleLoanChange}
+                        xmax={30}
+                        onChange={({ x }) => handleLoanTenureChange(x)}
                         style={{ width: "100%" }}
                       />
 
@@ -125,9 +150,9 @@ const CarLoanEMI = () => {
                         <div className="flex flex-col justify-end ml-auto">
                           <ul>
                             <li className="p-2">₹ 19,566</li>
-                            <li className="p-2">₹ 10,00,000</li>
-                            <li className="p-2">₹ 1,73,969</li>
-                            <li className="p-2">₹ 11,73,969</li>
+                            <li className="p-2">{`₹ ${LoanAmount}`}</li>
+                            <li className="p-2">{`₹ ${(LoanAmount * interest * loanTenure) / 100}`}</li>
+                            <li className="p-2">{`₹ ${LoanAmount + (LoanAmount * interest * loanTenure) / 100}`}</li>
                           </ul>
                         </div>
                       </div>
@@ -145,9 +170,9 @@ const CarLoanEMI = () => {
               </h2>
               <div className="text-base text-neutral-600">
                 <p>
-                  India is currently the world’s 4th largest market for 4-wheelers. Growth has been steady at 9.5% year-on-year. It is no wonder that the demand for a reliable and easy to use car loan EMI calculator has also skyrocketed.</p>
+                  India is currently the world’s 4th largest market for 4-wheelers. Growth has been steady at 9.5% year-on-year. It is no wonder that the demand for a reliable and easy to use car loan EMI calculator has also skyrocketed.</p>
                 <p className="py-7">
-                  While the Internet is flooded with calculators determining car loan EMIs, simplicity is the key that make it stand out. Credwala brings you the best and easy to use EMI calculating tool which will help you take an informed decision on how much funding you need to purchase your dream car, how much your EMIs are likely to be and other details.</p>
+                  While the Internet is flooded with calculators determining car loan EMIs, simplicity is the key that make it stand out. Credwala brings you the best and easy to use EMI calculating tool which will help you take an informed decision on how much funding you need to purchase your dream car, how much your EMIs are likely to be and other details.</p>
               </div>
               <h2 className="text-xl lg:text-3xl font-semibold">
                 How can a Car Loan EMI Calculator Help You?
@@ -167,7 +192,7 @@ const CarLoanEMI = () => {
                 <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200 text-neutral-600">
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>How much time does it take to use the calculator?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -186,7 +211,7 @@ const CarLoanEMI = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Can I avail myself a car loan to buy a used vehicle?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -206,7 +231,7 @@ const CarLoanEMI = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>What is the typical tenure of a car loan in India?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -224,7 +249,7 @@ const CarLoanEMI = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Do I need a co-guarantor for a car loan?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -242,7 +267,7 @@ const CarLoanEMI = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>Can my car loan application be rejected?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
