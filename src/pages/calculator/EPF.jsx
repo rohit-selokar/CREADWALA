@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import React, { useState, useEffect } from 'react';
 import InputSlider from "react-input-slider";
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const EPF = () => {
     const calculators = [
@@ -24,6 +22,12 @@ const EPF = () => {
     const [Contribution, setContribution] = useState(12);
     const [YourAge, setYourAge] = useState(28);
     const [AnnualIncrease, setAnnualIncrease] = useState(5);
+    const [CalculatedAmount, setCalculatedAmount] = useState(null);
+
+    useEffect(() => {
+        const calculatedEPFAmount = MonthlySalary * (Contribution / 100) * (AnnualIncrease / 100);
+        setCalculatedAmount(calculatedEPFAmount);
+    }, [MonthlySalary, Contribution, YourAge, AnnualIncrease]);
 
     const handleMonthlySalary = ({ x }) => {
         setMonthlySalary(x);
@@ -55,10 +59,20 @@ const EPF = () => {
                                     <div className="p-8 w-[100%] lg:w-[100%] xl:w-[200%] font-semibold text-l">
                                         <div>
                                             <p className=" flex items-center justify-between">
-                                                Monthly Salary{" "}
-                                                <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                                                    Rs {MonthlySalary}
-                                                </button>
+                                                Monthly Salary
+                                                <div>
+                                                    <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                                                        ₹
+                                                    </button>
+                                                    <input
+                                                        type="number"
+                                                        className=" p-2 w-24 border border-[#B9BABD] rounded-r-md"
+                                                        value={MonthlySalary}
+                                                        onChange={(e) =>
+                                                            setMonthlySalary(parseInt(e.target.value))
+                                                        }
+                                                    />
+                                                </div>
                                             </p>
                                             <InputSlider
                                                 axis="x"
@@ -74,10 +88,15 @@ const EPF = () => {
                                             <p className="flex items-center justify-between">
                                                 Your Age
                                                 <div>
-                                                    <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                                                        {YourAge}
-                                                    </button>
-                                                    <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
+                                                    <input
+                                                        type="number"
+                                                        className=" p-2 w-14 border border-[#B9BABD] rounded-l-md"
+                                                        value={YourAge}
+                                                        onChange={(e) =>
+                                                            handleYourAgeChange(parseInt(e.target.value))
+                                                        }
+                                                    />
+                                                    <button className="border border-[#3551E7] bg-[#3551E7] text-white p-2 px-4 rounded-r-md">
                                                         Year
                                                     </button>
                                                 </div>
@@ -94,10 +113,20 @@ const EPF = () => {
 
                                         <div className="mt-12">
                                             <p className=" flex items-center justify-between">
-                                                Your Contribution to EPF{" "}
-                                                <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                                                    {Contribution} %
-                                                </button>
+                                                Your Contribution of EPF{" "}
+                                                <div>
+                                                    <input
+                                                        className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                                                        type="number"
+                                                        value={Contribution}
+                                                        onChange={(e) =>
+                                                            handleContribution(parseInt(e.target.value))
+                                                        }
+                                                    />
+                                                    <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                                                        %
+                                                    </button>
+                                                </div>
                                             </p>
                                             <InputSlider
                                                 axis="x"
@@ -111,10 +140,20 @@ const EPF = () => {
 
                                         <div className="mt-12">
                                             <p className=" flex items-center justify-between">
-                                                Your Contribution to EPF{" "}
-                                                <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                                                    {AnnualIncrease} %
-                                                </button>
+                                                Annual Increase Salary{" "}
+                                                <div>
+                                                    <input
+                                                        type="number"
+                                                        className="border border-[#B9BABD] p-2 rounded-l-md w-14 text-center"
+                                                        value={AnnualIncrease}
+                                                        onChange={(e) =>
+                                                            handleAnnualIncrease(parseInt(e.target.value))
+                                                        }
+                                                    />
+                                                    <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                                                        %
+                                                    </button>
+                                                </div>
                                             </p>
                                             <InputSlider
                                                 axis="x"
@@ -128,7 +167,7 @@ const EPF = () => {
 
                                         <div className="mt-12">
                                             <p className=" flex items-center justify-between">
-                                                Your Contribution to EPF{" "}
+                                                Rate of Intrest{" "}
                                                 <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
                                                     7.1 %
                                                 </button>
@@ -138,7 +177,7 @@ const EPF = () => {
                                         <div className="flex items-center justify-center mt-10 mb-10">
                                             <div className="text-center text-neutral-600 ">
                                                 <p className="pt-4">You will have accumulated</p>
-                                                <p className="text-3xl pt-4">₹ 2,53,46,997</p>
+                                                <p className="text-3xl pt-4">{CalculatedAmount !== null ? `₹${CalculatedAmount}` : "calculate"}</p>
                                                 <p className="pt-4">by the time you retire</p>
                                             </div>
                                         </div>

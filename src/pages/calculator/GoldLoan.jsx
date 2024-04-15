@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import InputSlider from "react-input-slider";
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 const GoldLoan = () => {
   const calculators = [
@@ -20,30 +18,33 @@ const GoldLoan = () => {
     "HRA Calculator",
     "NPS Calculator"
   ];
+
+  const [loanAmount, setLoanAmount] = useState(1000000);
+  const [interestRate, setInterestRate] = useState(6.5);
+  const [loanTenure, setLoanTenure] = useState(5);
+
+  const handleLoanAmountChange = ({ x }) => {
+    setLoanAmount(x);
+  };
+
+  const handleInterestRateChange = ({ x }) => {
+    setInterestRate(x);
+  };
+
+  const handleLoanTenureChange = ({ x }) => {
+    setLoanTenure(x);
+  };
+
+  const totalInterest = (loanAmount * interestRate * loanTenure) / 100;
+
   const data = {
     labels: ["Principal Amount", "Total Interest"],
     datasets: [
       {
-        data: [80, 20],
+        data: [loanAmount, totalInterest],
         backgroundColor: ["#3551E7", "#E4E4E4"],
       },
     ],
-  };
-
-  const [LoanAmount, setLoanAmount] = useState(1000000);
-  const [interest, setInterest] = useState(6.5);
-  const [loanTenure, setLoanTenure] = useState(5);
-
-  const handleLoanAmount = ({ x }) => {
-    setLoanAmount(x);
-  };
-
-  const handleInterestChange = ({ x }) => {
-    setInterest(x);
-  };
-
-  const handleLoanChange = ({ x }) => {
-    setLoanTenure(x);
   };
 
   return (
@@ -61,16 +62,26 @@ const GoldLoan = () => {
                     <div>
                       <p className=" flex items-center justify-between">
                         Loan Amount{" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          Rs {LoanAmount}
-                        </button>
+                        <div>
+                          <button className="px-4 p-2 border border-[#B9BABD] rounded-l-md">
+                            ₹
+                          </button>
+                          <input
+                            type="number"
+                            className=" p-2 w-24 border border-[#B9BABD] rounded-r-md"
+                            value={loanAmount}
+                            onChange={(e) =>
+                              setLoanAmount(parseInt(e.target.value))
+                            }
+                          />
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={LoanAmount}
+                        x={loanAmount}
                         xmin={0}
                         xmax={2000000}
-                        onChange={handleLoanAmount}
+                        onChange={handleLoanAmountChange}
                         style={{ width: "100%" }}
                       />
                     </div>
@@ -78,29 +89,45 @@ const GoldLoan = () => {
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
                         Rate of Interest (p.a){" "}
-                        <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                          {interest} %
-                        </button>
+                        <div>
+                          <input
+                            className="border border-[#B9BABD] p-2 rounded-l-md bg-white w-16 text-center"
+                            type="number"
+                            value={interestRate}
+                            onChange={(e) =>
+                              setInterestRate(parseInt(e.target.value))
+                            }
+                          />
+                          <button className="px-3 p-2 border border-[#B9BABD] rounded-r-md">
+                            %
+                          </button>
+                        </div>
                       </p>
                       <InputSlider
                         axis="x"
-                        x={interest}
+                        x={interestRate}
                         xmin={0}
                         xmax={30}
-                        onChange={handleInterestChange}
+                        onChange={handleInterestRateChange}
                         style={{ width: "100%" }}
                       />
                     </div>
 
                     <div className="mt-12">
                       <p className="flex items-center justify-between">
-                        Loan Tenure:
+                        Loan Tenure
                         <div>
-                          <button className="border border-[#B9BABD] p-2 px-4 rounded-md">
-                            {loanTenure}
-                          </button>
-                          <button className="border border-[#B9BABD] bg-[#3551E7] text-white p-2 px-4 rounded-md ml-3">
-                            Year
+                          <input
+                            type="number"
+                            className="border border-[#B9BABD] p-2 rounded-l-md w-14 text-center"
+                            value={loanTenure}
+                            onChange={(e) =>
+                              setLoanTenure(parseInt(e.target.value))
+                            }
+                          />
+
+                          <button className="border border-[#3551E7] bg-[#3551E7] text-white p-2 px-4 rounded-r-md">
+                            Years
                           </button>
                         </div>
                       </p>
@@ -109,7 +136,7 @@ const GoldLoan = () => {
                         x={loanTenure}
                         xmin={0}
                         xmax={15}
-                        onChange={handleLoanChange}
+                        onChange={handleLoanTenureChange}
                         style={{ width: "100%" }}
                       />
 
@@ -125,9 +152,9 @@ const GoldLoan = () => {
                         <div className="flex flex-col justify-end ml-auto">
                           <ul>
                             <li className="p-2">₹ 19,566</li>
-                            <li className="p-2">₹ 10,00,000</li>
-                            <li className="p-2">₹ 1,73,969</li>
-                            <li className="p-2">₹ 11,73,969</li>
+                            <li className="p-2">₹ {loanAmount}</li>
+                            <li className="p-2">₹ {totalInterest}</li>
+                            <li className="p-2">₹ {loanAmount + totalInterest}</li>
                           </ul>
                         </div>
                       </div>
@@ -145,7 +172,7 @@ const GoldLoan = () => {
               </h2>
               <div className="text-base text-neutral-600">
                 <p>
-                  A  Gold Loan EMI Calculator is a useful tool for individuals seeking financing against their gold assets. This calculator assists borrowers in estimating the equated monthly installments (EMIs) they would need to pay based on factors such as the loan amount, interest rate, and tenure. By inputting these details, borrowers can quickly determine the approximate amount they would owe each month, allowing them to plan their finances effectively. Additionally, the calculator provides clarity and transparency regarding the total interest payable over the loan tenure, enabling borrowers to assess the overall cost of borrowing against their gold assets.</p>
+                  A Gold Loan EMI Calculator is a useful tool for individuals seeking financing against their gold assets. This calculator assists borrowers in estimating the equated monthly installments (EMIs) they would need to pay based on factors such as the loan amount, interest rate, and tenure. By inputting these details, borrowers can quickly determine the approximate amount they would owe each month, allowing them to plan their finances effectively. Additionally, the calculator provides clarity and transparency regarding the total interest payable over the loan tenure, enabling borrowers to assess the overall cost of borrowing against their gold assets.</p>
                 <p className="py-7">
                   Furthermore, the Gold Loan EMI Calculator facilitates informed decision-making by allowing borrowers to compare different loan options. By experimenting with various loan amounts and repayment tenures, individuals can assess the affordability of different loan scenarios and choose the one that best suits their financial situation. This empowers borrowers to make well-informed choices, ensuring they select a gold loan option that aligns with their budgetary constraints and long-term financial objectives. Overall, the Gold Loan EMI Calculator serves as a valuable resource, offering borrowers the necessary insights to make sound financial decisions when leveraging their gold assets for financing needs.</p>
               </div>
@@ -159,10 +186,10 @@ const GoldLoan = () => {
               </div>
               <div className=" w-full bg-white pt-5 pb-5 ring-gray-900/5 sm:max-w-10xl sm:rounded-lg">
                 <h2 className=" text-2xl font-semibold tracking-tight md:text-3xl">FAQ</h2>
-                <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200">
+                <div className=" mt-5 grid max-w-5xl divide-y divide-neutral-200 text-neutral-600">
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span> What sort of loans can I use the EMI calculator for?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -181,7 +208,7 @@ const GoldLoan = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>How does the debt-to-income ratio affect my chances of availing of a loan?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -201,7 +228,7 @@ const GoldLoan = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>What does an EMI consist of?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -219,7 +246,7 @@ const GoldLoan = () => {
                   </div>
                   <div className="py-5">
                     <details className="group">
-                      <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                      <summary className="flex cursor-pointer list-none items-center justify-between ">
                         <span>What happens if I fail to pay my EMIs?</span>
                         <span className="transition group-open:rotate-180">
                           <svg fill="none" height="24" shape-rendering="geometricPrecision"
