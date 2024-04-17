@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Stepper from './Stepper/Stepper';
 
 const InsuranceCalculator = () => {
@@ -17,6 +17,22 @@ const InsuranceCalculator = () => {
     "HRA Calculator",
     "NPS Calculator"
   ];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  
+    // Scroll to top again after hash links have been processed
+    const handleHashChange = () => {
+      window.scrollTo(0, 0);
+    };
+  
+    window.addEventListener('hashchange', handleHashChange);
+  
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+  
 
   return (
     <div className="py-10 px-3 md:px-10 lg:px-20">

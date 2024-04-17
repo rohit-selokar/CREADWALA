@@ -45,6 +45,21 @@ const EPF = () => {
         setContribution(x);
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      
+        // Scroll to top again after hash links have been processed
+        const handleHashChange = () => {
+          window.scrollTo(0, 0);
+        };
+      
+        window.addEventListener('hashchange', handleHashChange);
+      
+        return () => {
+          window.removeEventListener('hashchange', handleHashChange);
+        };
+      }, []);
+      
     return (
         <div className="py-10 px-3 md:px-10 lg:px-20">
             <div className="container mx-auto">
@@ -80,7 +95,7 @@ const EPF = () => {
                                                 xmin={0}
                                                 xmax={100000}
                                                 onChange={handleMonthlySalary}
-                                                style={{ width: "100%" }}
+                                                style={{ width: "100%", height: "4px" }}
                                             />
                                         </div>
 
@@ -107,7 +122,7 @@ const EPF = () => {
                                                 xmin={18}
                                                 xmax={80}
                                                 onChange={handleYourAgeChange}
-                                                style={{ width: "100%" }}
+                                                 style={{ width: "100%", height: "4px" }}
                                             />
                                         </div>
 
@@ -134,7 +149,7 @@ const EPF = () => {
                                                 xmin={12}
                                                 xmax={100}
                                                 onChange={handleContribution}
-                                                style={{ width: "100%" }}
+                                                 style={{ width: "100%", height: "4px" }}
                                             />
                                         </div>
 
@@ -161,7 +176,7 @@ const EPF = () => {
                                                 xmin={0}
                                                 xmax={20}
                                                 onChange={handleAnnualIncrease}
-                                                style={{ width: "100%" }}
+                                                 style={{ width: "100%", height: "4px" }}
                                             />
                                         </div>
 
@@ -229,7 +244,7 @@ const EPF = () => {
                                 <div className=" mt-5 grid max-w-10xl divide-y divide-neutral-200 text-neutral-600">
                                     <div className="py-5">
                                         <details className="group">
-                                            <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                                            <summary className="flex cursor-pointer list-none items-center justify-between  ">
                                                 <span>Is the EPF calculator free to use?</span>
                                                 <span className="transition group-open:rotate-180">
                                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -248,7 +263,7 @@ const EPF = () => {
                                     </div>
                                     <div className="py-5">
                                         <details className="group">
-                                            <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                                            <summary className="flex cursor-pointer list-none items-center justify-between  ">
                                                 <span>How many times can I use the online EPF calculator?</span>
                                                 <span className="transition group-open:rotate-180">
                                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -268,7 +283,7 @@ const EPF = () => {
                                     </div>
                                     <div className="py-5">
                                         <details className="group">
-                                            <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                                            <summary className="flex cursor-pointer list-none items-center justify-between  ">
                                                 <span>Can I use the same calculator even after I change my job?</span>
                                                 <span className="transition group-open:rotate-180">
                                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -286,7 +301,7 @@ const EPF = () => {
                                     </div>
                                     <div className="py-5">
                                         <details className="group">
-                                            <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                                            <summary className="flex cursor-pointer list-none items-center justify-between  ">
                                                 <span>What happens if the depositor rates- from either my end or my employer’s- changes?</span>
                                                 <span className="transition group-open:rotate-180">
                                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"
@@ -304,7 +319,7 @@ const EPF = () => {
                                     </div>
                                     <div className="py-5">
                                         <details className="group">
-                                            <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
+                                            <summary className="flex cursor-pointer list-none items-center justify-between  ">
                                                 <span>When can I withdraw the money from my EPF account?</span>
                                                 <span className="transition group-open:rotate-180">
                                                     <svg fill="none" height="24" shape-rendering="geometricPrecision"

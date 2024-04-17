@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
 import InputSlider from "react-input-slider";
@@ -33,7 +33,20 @@ const Emi = () => {
   const handleLoanTensure = (newValue) => {
     setLoanTenure(newValue);
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  
+    // Scroll to top again after hash links have been processed
+    const handleHashChange = () => {
+      window.scrollTo(0, 0);
+    };
+  
+    window.addEventListener('hashchange', handleHashChange);
+  
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);  
   return (
     <>
       <div className="mx-4 md:mx-16 xl:mx-20">
