@@ -62,6 +62,22 @@ const HomeLoanEmi = () => {
     ],
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  
+    // Scroll to top again after hash links have been processed
+    const handleHashChange = () => {
+      window.scrollTo(0, 0);
+    };
+  
+    window.addEventListener('hashchange', handleHashChange);
+  
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+  
+
   return (
     <div className="py-10 px-3 md:px-10 lg:px-20">
       <div className="container mx-auto">
@@ -97,7 +113,7 @@ const HomeLoanEmi = () => {
                         xmin={0}
                         xmax={2000000}
                         onChange={handleLoanAmount}
-                        style={{ width: "100%" }}
+                         style={{ width: "100%", height: "4px" }}
                       />
                     </div>
 
@@ -124,7 +140,7 @@ const HomeLoanEmi = () => {
                         xmin={0}
                         xmax={30}
                         onChange={handleInterestRateChange}
-                        style={{ width: "100%" }}
+                         style={{ width: "100%", height: "4px" }}
                       />
                     </div>
 
@@ -151,7 +167,7 @@ const HomeLoanEmi = () => {
                         xmin={0}
                         xmax={15}
                         onChange={handleLoanTenureChange}
-                        style={{ width: "100%" }}
+                         style={{ width: "100%", height: "4px" }}
                       />
 
                       <div className="py-4 flex lg:mt-10 text-[#434061] items-start justify-between">
