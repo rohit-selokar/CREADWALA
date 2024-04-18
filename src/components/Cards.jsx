@@ -13,10 +13,10 @@ const Cards = () => {
         Finances
       </p>
       <div className=" grid gap-8 md:grid-cols-2">
-        <img src={home} className="shadow-card cursor-pointer" />
-        <img src={credit} className="shadow-card cursor-pointer" />
-        <img src={business} className="shadow-card cursor-pointer" />
-        <img src={personal} className="shadow-card cursor-pointer" />
+        <img src={home} className="shadow-card cursor-pointer rounded-md" />
+        <img src={credit} className="shadow-card cursor-pointer rounded-md" />
+        <img src={business} className="shadow-card cursor-pointer rounded-md" />
+        <img src={personal} className="shadow-card cursor-pointer rounded-md" />
       </div>
     </div>
   );
