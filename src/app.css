@@ -149,13 +149,58 @@ body{
   background-position: center;
   transition: background 0.8s;
 }
-.ripple:hover {
+/* .ripple:hover {
   background: #3753E9 radial-gradient(circle, transparent 1%, #47a7f5 1%) center /15000%;
-}
+} */
 .ripple:active {
   /* background-color: #6eb9f7; */
   background-size: 100%;
   transition: background 0s;
 }
 
+/* Define shine effect */
+:root {
+  --anim-duration: 5s; 
+  --anim-speed: 0.3s; 
+  --btn-border: 1px solid rgb(255, 255, 255);
+  --btn-bg: transparent;
+  --btn-shadow: 1px 1px 25px 10px rgba(222, 222, 222, 0.5);
+  --btn-text-color: #f4f4f4;
 
+  --shine-degree: 45deg;
+  --shine-color: rgba(222, 222, 222, 0.475);
+  --shine-effect: linear-gradient(
+    var(--shine-degree),
+    transparent,
+    var(--shine-color),
+    transparent
+  );
+  --shine-transition: all var(--anim-speed) ease-in-out;
+}
+
+.btn {
+  position: relative;
+  overflow: hidden; 
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--shine-effect);
+}
+
+.btn-hover::before {
+  left: -100%;
+  transition: var(--shine-transition);
+}
+
+.btn-hover:hover {
+  box-shadow: var(--btn-shadow);
+}
+
+.btn-hover:hover::before {
+  left: 100%;
+}

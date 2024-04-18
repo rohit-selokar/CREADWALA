@@ -28,7 +28,7 @@ const First = () => {
         <p className="my-2  md:my-4 xl:my-6 xl:text-[23px] text-[#111111] xl:pr-36">
           With Identity, Smart, Simple tools for borrowing, saving & earning
         </p>
-        <button className=" bg-[#2943d3] my-4 text-white w-[130px] h-[35px] lg:h-[45px] lg:w-[200px] rounded-full lg:mt-6 xl:mt-10 xl:text-[19px] xl:h-[49px]">
+        <button className="ripple btn btn-hover bg-[#2943d3] my-4 text-white w-[130px] h-[35px] lg:h-[45px] lg:w-[200px] rounded-full lg:mt-6 xl:mt-10 xl:text-[19px] xl:h-[49px]">
           Get Started
         </button>
       </div>

@@ -27,7 +27,7 @@ const Third = () => {
           One powerful number that puts you in control
         </p>
         <button
-          className="ripple text-[15px] text-white w-[210px] h-[39px] xl:text-[20px] xl:w-[290px] xl:h-[48px] my-4 lg:my-8 rounded-full"
+          className="btn btn-hover ripple text-[15px] text-white w-[210px] h-[39px] xl:text-[20px] xl:w-[290px] xl:h-[48px] my-4 lg:my-8 rounded-full"
           // style={{ background: "linear-gradient(to right,#3753E9,#102ED0)" }}
           
         >
