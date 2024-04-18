@@ -167,7 +167,7 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/HomeLoanEMI">
-            <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
               Calculate
             </button>
           </Link>
@@ -181,7 +181,7 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/InsuranceCalculator">
-            <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
               Calculate
             </button>
           </Link>
@@ -197,10 +197,10 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/PersonalLoan">
-                        <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
-                            Calculate
-                        </button>
-                    </Link>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-5 hover:shadow-lg">
@@ -213,10 +213,10 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/GoldLoan">
-                        <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
-                            Calculate
-                        </button>
-                    </Link>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-5 hover:shadow-lg">
@@ -229,10 +229,10 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/MortageLoan">
-                        <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
-                            Calculate
-                        </button>
-                    </Link>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
+              Calculate
+            </button>
+          </Link>
         </div>
 
         <div className="border border-[#F0E3E3] rounded-xl p-5 hover:shadow-lg">
@@ -245,10 +245,10 @@ const Emi_Calculator = () => {
             CREDWALA EMI Calculator.
           </p>
           <Link to="/BusinessLoan">
-                        <button className="mt-9 mb-4 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[35px] rounded-full hover:bg-[#1E40AF] hover:text-white">
-                            Calculate
-                        </button>
-                    </Link>
+            <button className="mt-8 bg-[#3551E7] text-[#FFFFFF] w-[120px] h-[40px] rounded-full hover:bg-[#5b6fe1] hover:transition duration-500">
+              Calculate
+            </button>
+          </Link>
         </div>
       </div>
     </div>
