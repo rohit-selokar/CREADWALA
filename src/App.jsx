@@ -12,6 +12,7 @@ import Ppf from "./pages/calculator/Ppf";
 import Mf from "./pages/calculator/Mf";
 import Swp from "./pages/calculator/Swp";
 import Lumpsum from "./pages/calculator/Lumpsum";
+
 const App = () => {
   return (
     <>

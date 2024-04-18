@@ -96,13 +96,13 @@ const Footer = () => {
               }}
             >
               <div className="text-center">
-                <p className="font-semibold my-4 text-[30px] xl:text-[40px]">
+                <p className="font-semibold my-4 text-[30px] xl:text-[38px]">
                   Trusted by{" "}
-                  <span className="text-[#FFE70E] text-[40px] xl:text-[46px]">
+                  <span className="text-[#FFE70E] text-[40px] xl:text-[42px]">
                     150+ Banks
                   </span>
                 </p>
-                <p className="text-[20px] lg:text-[23px] xl:text-[25px]">Choose best from 150+ Banks</p>
+                <p className="text-[20px] lg:text-[23px] xl:text-[22px]">Choose best from 150+ Banks</p>
               </div>
               <div className="grid gap-2 grid-cols-4 my-10 xl:my-14 md:grid-cols-8  lg:mx-20">
                 <img src={bank1} className="w-16 md:w-20 lg:w-24 xl:w-28" />
@@ -128,13 +128,13 @@ const Footer = () => {
               }}
             >
               <div className="text-center">
-                <p className="font-semibold my-4 text-[30px] xl:text-[40px]">
+                <p className="font-semibold my-4 text-[30px] xl:text-[38px]">
                   Trusted by{" "}
-                  <span className="text-[#FFE70E] text-[40px] xl:text-[46px]">
+                  <span className="text-[#FFE70E] text-[40px] xl:text-[42px]">
                     150+ Banks
                   </span>
                 </p>
-                <p className="text-[20px] lg:text-[23px] xl:text-[25px]">Choose best from 150+ Banks</p>
+                <p className="text-[20px] lg:text-[23px] xl:text-[22px]">Choose best from 150+ Banks</p>
               </div>
               <div className="grid gap-2 grid-cols-4 my-10 xl:my-14 md:grid-cols-8  lg:mx-20">
                 <img src={bank1} className="w-16 md:w-20 lg:w-24 xl:w-28" />
@@ -160,13 +160,13 @@ const Footer = () => {
               }}
             >
               <div className="text-center">
-                <p className="font-semibold my-4 text-[30px] xl:text-[40px]">
+                <p className="font-semibold my-4 text-[30px] xl:text-[38px]">
                   Trusted by{" "}
-                  <span className="text-[#FFE70E] text-[40px] xl:text-[46px]">
+                  <span className="text-[#FFE70E] text-[40px] xl:text-[42px]">
                     150+ Banks
                   </span>
                 </p>
-                <p className="text-[20px] lg:text-[23px] xl:text-[25px]">Choose best from 150+ Banks</p>
+                <p className="text-[20px] lg:text-[23px] xl:text-[22px]">Choose best from 150+ Banks</p>
               </div>
               <div className="grid gap-2 grid-cols-4 my-10 xl:my-14 md:grid-cols-8  lg:mx-20">
                 <img src={bank1} className="w-16 md:w-20 lg:w-24 xl:w-28" />
