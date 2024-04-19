@@ -12,6 +12,14 @@ import Ppf from "./pages/calculator/Ppf";
 import Mf from "./pages/calculator/Mf";
 import Swp from "./pages/calculator/Swp";
 import Lumpsum from "./pages/calculator/Lumpsum";
+import EPF from "./pages/calculator/EPF";
+import BusinessLoan from "./pages/calculator/BusinessLoan";
+import CarLoanEMI from "./pages/calculator/CarLoanEMI";
+import GoldLoan from "./pages/calculator/GoldLoan";
+import HomeLoanEmi from "./pages/calculator/HomeLoanEmi";
+import InsuranceCalculator from "./pages/calculator/InsuranceCalculator";
+import MortageLoan from "./pages/calculator/MortageLoan";
+import PersonalLoan from "./pages/calculator/PersonalLoan";
 
 
 const App = () => {
@@ -29,9 +37,15 @@ const App = () => {
         <Route path="/lumpsumcalculator" element={<Lumpsum />} />
         <Route path="/calculator/mfcalculator" element={<Mf />} />
         <Route path="/swpcalculator" element={<Swp />} />
-        
+        <Route path="/BusinessLoan" element={<BusinessLoan />} />
+        <Route path="/CarLoanEMI" element={<CarLoanEMI />} />
+        <Route path="/EPF" element={<EPF />} />
+        <Route path="/GoldLoan" element={<GoldLoan />} />
+        <Route path="/HomeLoanEmi" element={<HomeLoanEmi />} />
+        <Route path="/InsuranceCalculator" element={<InsuranceCalculator />} />
+        <Route path="/MortageLoan" element={<MortageLoan />} />
+        <Route path="/PersonalLoan" element={<PersonalLoan />} />
       </Routes>
-
       <Footer />
     </>
   );
