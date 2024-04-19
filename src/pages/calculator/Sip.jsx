@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 // import pie from "../../assets/sip-pie.png";
 // import slider from "../../assets/sip-bar.png";
 // import sip from "../../assets/sip.png";
@@ -33,6 +33,21 @@ const Sip = () => {
   const handleLoanTensure = (newValue) => {
     setLoanTenure(newValue);
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  
+    // Scroll to top again after hash links have been processed
+    const handleHashChange = () => {
+      window.scrollTo(0, 0);
+    };
+  
+    window.addEventListener('hashchange', handleHashChange);
+  
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);  
   return (
     <div className="container mx-auto max-w-7xl">
       <p className="text-[25px] p-4 lg:my-4 xl:p-0 xl:my-8 lg:text-[30px] font-medium tracking-wider">

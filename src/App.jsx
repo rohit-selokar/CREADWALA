@@ -13,23 +13,30 @@ import Mf from "./pages/calculator/Mf";
 import Swp from "./pages/calculator/Swp";
 import Lumpsum from "./pages/calculator/Lumpsum";
 
+
 const App = () => {
   return (
     <>
       <Header />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/calculator" element={<Emi_Calculator />} />
-        <Route path="/emicalculator" element={<Emi/>}/>
-        <Route path="/calculator/sipcalculator" element={<Sip/>}/>
-        <Route path="/rdcalulator" element={<Rd/>}/>
-        <Route path="/calculator/ssycalculator" element={<Ssy/>}/>
-        <Route path="/ppfcalculator" element={<Ppf/>}/>
-        <Route path="/lumpsumcalculator" element={<Lumpsum/>}/>
-        <Route path="/calculator/mfcalculator" element={<Mf/>}/>
-        <Route path="/swpcalculator" element={<Swp/>}/>
-        
+        <Route path="/emicalculator" element={<Emi />} />
+        <Route path="/calculator/sipcalculator" element={<Sip />} />
+        <Route path="/rdcalulator" element={<Rd />} />
+        <Route path="/calculator/ssycalculator" element={<Ssy />} />
+        <Route path="/ppfcalculator" element={<Ppf />} />
+        <Route path="/lumpsumcalculator" element={<Lumpsum />} />
+        <Route path="/calculator/mfcalculator" element={<Mf />} />
+        <Route path="/swpcalculator" element={<Swp />} />
+        <Route path="/BusinessLoan" element={<BusinessLoan />} />
+        <Route path="/CarLoanEMI" element={<CarLoanEMI />} />
+        <Route path="/EPF" element={<EPF />} />
+        <Route path="/GoldLoan" element={<GoldLoan />} />
+        <Route path="/HomeLoanEmi" element={<HomeLoanEmi />} />
+        <Route path="/InsuranceCalculator" element={<InsuranceCalculator />} />
+        <Route path="/MortageLoan" element={<MortageLoan />} />
+        <Route path="/PersonalLoan" element={<PersonalLoan />} />
       </Routes>
 
       <Footer />
