@@ -392,7 +392,7 @@ const Product = () => {
       <div className="text-center lg:mt-12">
         {!showAdditionalCards && (
           <button
-            className="ripple btn btn-hover bg-[#334bd5] text-white text-[15px] w-[120px] h-[33px] xl:w-[135px] xl:h-[35px] rounded-full"
+            className="bg-[#334bd5] text-white text-[15px] w-[120px] h-[33px] xl:w-[135px] xl:h-[35px] rounded-full"
             onClick={handleViewMore}
           >
             View more
