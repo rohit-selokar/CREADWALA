@@ -12,7 +12,7 @@ const First = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-    >
+    > 
       <div className="md:mx-4 container xl:mx-auto font-manrope text-center md:flex items-center md:text-start">
         <div className=" md:order-2 flex justify-center">
           <img src={first} className="lg:mt-2 w-[420px] xl:w-[750px]" />

@@ -29,14 +29,7 @@ const App = () => {
         <Route path="/lumpsumcalculator" element={<Lumpsum />} />
         <Route path="/calculator/mfcalculator" element={<Mf />} />
         <Route path="/swpcalculator" element={<Swp />} />
-        <Route path="/BusinessLoan" element={<BusinessLoan />} />
-        <Route path="/CarLoanEMI" element={<CarLoanEMI />} />
-        <Route path="/EPF" element={<EPF />} />
-        <Route path="/GoldLoan" element={<GoldLoan />} />
-        <Route path="/HomeLoanEmi" element={<HomeLoanEmi />} />
-        <Route path="/InsuranceCalculator" element={<InsuranceCalculator />} />
-        <Route path="/MortageLoan" element={<MortageLoan />} />
-        <Route path="/PersonalLoan" element={<PersonalLoan />} />
+        
       </Routes>
 
       <Footer />
