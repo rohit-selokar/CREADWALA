@@ -96,7 +96,7 @@ const Header = () => {
       </div>
 
       <div className="hidden lg:flex">
-        <button className="ripple btn btn-hover bg-[#102ED0] text-white w-[125px] h-[35px] rounded-full">
+        <button className="bg-[#102ED0] text-white w-[125px] h-[35px] rounded-full">
           Get Started
         </button>
       </div>
