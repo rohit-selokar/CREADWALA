@@ -12,7 +12,7 @@ const Cards = () => {
         Bringing You the <span className="text-[#112FD1]">Best</span> of
         Finances
       </p>
-      <div className=" grid gap-8 md:grid-cols-2">
+      <div className=" grid gap-8 md:grid-cols-2"> 
         <img src={home} className="shadow-card rounded-md cursor-pointer" />
         <img src={credit} className="shadow-card rounded-md cursor-pointer" />
         <img src={business} className="shadow-card rounded-md cursor-pointer" />
