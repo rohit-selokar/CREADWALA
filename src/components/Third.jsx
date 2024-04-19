@@ -15,7 +15,7 @@ const Third = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
       }}
-    >
+
       <div className="container mx-auto font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16">
         <div className="text-center md:text-start">
           <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[40px]">
@@ -28,6 +28,23 @@ const Third = () => {
             Get Free Your Credit Score
           </button>
         </div>
+
+      <div className="text-center md:text-start">
+        <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[43px]">
+          Get your latest Credit Score
+        </p>
+        <p className="my-2 xl:my-4 xl:text-[25px]">
+          One powerful number that puts you in control
+        </p>
+        <button
+          className="btn btn-hover ripple text-[15px] text-white w-[210px] h-[39px] xl:text-[20px] xl:w-[290px] xl:h-[48px] my-4 lg:my-8 rounded-full"
+          // style={{ background: "linear-gradient(to right,#3753E9,#102ED0)" }}
+          
+        >
+          Get Free Your Credit Score
+        </button>
+      </div>
+
 
         <div className="bg-[#FFFFFF] shadow-lg mx-10 md:mx-0 rounded-2xl md:w-[350px] lg:w-[410px] xl:w-[500px] xl:pb-6">
           <img src={img3} className="xl:w-[500px]" />
