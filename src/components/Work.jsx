@@ -6,7 +6,7 @@ import img3 from "../assets/img3.png";
 
 const Work = () => {
   return (
-    <div className="container mx-auto px-2 my-14 md:flex md:justify-around md:items-center">
+    <div className="mx-4 xl:container xl:mx-auto max-w-7xl px-2 my-14 md:flex md:justify-around md:items-center">
       <div>
         <div className="text-center  md:text-start">
           <p className="text-[30px] font-bold lg:text-[34px] xl:text-[40px]">

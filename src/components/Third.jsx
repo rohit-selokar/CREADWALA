@@ -16,8 +16,8 @@ const Third = () => {
         backgroundSize: "cover",
       }}
     >
-      <div className="container mx-auto font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16">
-        <div className="text-center md:text-start">
+      <div className="xl:container xl:mx-auto max-w-7xl font-manrope py-6 md:py-14 md:flex md:justify-around xl:py-16">
+        <div className="text-center md:text-start ">
           <p className="text-[25px] font-semibold lg:text-[30px] xl:text-[40px]">
             Get your latest Credit Score
           </p>

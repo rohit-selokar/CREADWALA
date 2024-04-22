@@ -3,7 +3,7 @@ import loan from "../assets/loan-process.png";
 
 const Loan = () => {
   return (
-    <div className="container mx-auto my-10 ">
+    <div className="mx-2 xl:container xl:mx-auto max-w-7xl my-10 ">
       <div className="text-center mx-8 my-6">
         <p className="font-bold text-[30px] md:text-[26px] my-3 lg:text-[35px] xl:text-[40px]">
           What do I need to do for a{" "}
