@@ -12,13 +12,13 @@ const Product = () => {
   };
 
   return (
-    <div className="container mx-4 xl:mx-auto my-14 xl:my-20 font-manrope">
+    <div className="container xl:mx-auto max-w-7xl my-14 xl:my-20 font-manrope">
       <p className="text-[23px] text-center md:text-start font-bold lg:my-10 lg:text-[30px] lg:tracking-wide">
         Check out what <span className="text-[#474FFF]">CREDWALA</span> trending
         products
       </p>
 
-      <div className=" lg:mx-0 my-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className=" lg:mx-0 my-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {productData
           .slice(0, showAdditionalCards ? undefined : 8)
           .map((product, index) => (

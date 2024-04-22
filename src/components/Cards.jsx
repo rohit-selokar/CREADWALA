@@ -7,7 +7,7 @@ import "../app.css";
 
 const Cards = () => {
   return (
-    <div className="container mx-4 xl:mx-auto my-10 lg:grid lg:justify-around">
+    <div className="mx-6 xl:container xl:mx-auto max-w-7xl my-10 lg:grid lg:justify-around">
       <p className="font-bold text-center text-[28px] my-3 xl:my-6 lg:text-[34px] xl:text-[40px] md:mb-4 ">
         Bringing You the <span className="text-[#112FD1]">Best</span> of
         Finances

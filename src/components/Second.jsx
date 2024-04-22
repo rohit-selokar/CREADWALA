@@ -6,8 +6,8 @@ import img4 from "../assets/material-symbols-light_featured-seasonal-and-gifts.p
 
 const Second = () => {
   return (
-    <div className="bg-[#474FFF] text-white">
-      <div className="container mx-auto text-[13px] font-semibold font-manrope grid grid-cols-2 gap-2 p-2 md:grid-cols-4 lg:grid-cols-4 xl:px-[25px] xl:text-[17px] xl:gap-0">
+    <div className=" bg-[#474FFF] text-white">
+      <div className="xl:container xl:mx-auto max-w-7xl text-[13px] font-semibold font-manrope grid grid-cols-2 gap-2 p-2 md:grid-cols-4 xl:gap-2">
         <div className="flex p-2 items-center lg:justify-center">
           <img src={img1} />
           <p className="pl-2">150+ Banks</p>
