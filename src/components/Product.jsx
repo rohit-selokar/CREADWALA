@@ -35,11 +35,11 @@ const Product = () => {
                       </p>
                     </div>
                     <div>
-                      <img src={product.image} alt={product.title} />
+                      <img src={product.image} alt="img" />
                     </div>
                   </div>
                   <p className="flex items-center ag-courses-item_date text-[#007F86] text-[13px] font-semibold mt-3">
-                    Check Eligibility{" "}
+                    {product.eligibilityText}
                     <img src={right} alt="Right arrow" className="ml-1" />
                   </p>
                 </div>
