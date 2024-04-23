@@ -2,7 +2,7 @@
   {
     "title": "HOME LOAN",
     "description": "Choose from lowest interest rates available for your dream home",
-    "image": "/src/assets/homeLoan.png",
+    "image": "/public/homeLoan.png",
     "eligibilityText": "Check Eligibility"
   },
   {
