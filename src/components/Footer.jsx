@@ -58,7 +58,7 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import "../app.css";
 import bank1 from "../assets/bank1.png";
 import bank2 from "../assets/bank2.png";
 import bank3 from "../assets/bank3.png";
@@ -72,15 +72,17 @@ const Footer = () => {
   var settings = {
     dots: true,
     infinite: true,
-    // speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 4000,
-    // cssEase:"linear"
-    
-  };
+    appendDots: dots => (
+      <div style={{ position: 'absolute', bottom: '10px', width: '100%', textAlign: 'center' }}>
+        <ul style={{ margin: "0", padding: "0", listStyle: "none", display: "inline-block" }}> {dots} </ul>
+      </div>
+    ), 
+  }; 
   return (
     <>
       <div className="slider-container">
@@ -180,7 +182,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          
+   
         </Slider>
       </div>
 
