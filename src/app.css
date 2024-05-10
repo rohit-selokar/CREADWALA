@@ -182,8 +182,9 @@ body{
 
 .dropdown{
   padding: 10px 10px;
-  
   border-radius: 10px;
+  /* margin-left: 8px;
+  margin-right: 8px; */
 }
 
 
@@ -195,7 +196,6 @@ body{
 
 .dropdown1{
   padding: 10px 10px;
-  
   border-radius: 10px;
   width: 250px;
 }
@@ -204,5 +204,30 @@ body{
 .dropdown1:hover{
   background-color: #DFE4FF;
   font-weight: 600;
+  /* h-[450px] overflow-y-auto */
+  /* height: 450px; */
+  /* overflow-y: auto; */
+}
+
+
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the background color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #C0C0C0; /* Set the color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0; /* Set the color of the scrollbar handle on hover */
 }
 
