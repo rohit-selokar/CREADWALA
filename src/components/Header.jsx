@@ -9,7 +9,6 @@ import bank1 from "../assets/bank_1.png";
 import bank2 from "../assets/bank_2.png";
 import bank3 from "../assets/bank_3.png";
 
-
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -17,10 +16,12 @@ const Header = () => {
   const [nestedDropDownOpen, setnestedDropDownOpen] = useState(false);
   const [bankWiseDropdownOpen, setBankWiseDropdownOpen] = useState(false);
 
+  // Menu bar for small screen
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // handle mouse event
   const handleMouseEnter = () => {
     setdropOpen(true);
   };
@@ -28,6 +29,7 @@ const Header = () => {
     setdropOpen(false);
   };
 
+  // Personal Loan Section
   const handleNestedMouseEnter = () => {
     setnestedDropDownOpen(true);
   };
@@ -44,7 +46,7 @@ const Header = () => {
     setBankWiseDropdownOpen(false);
   };
 
-  // Home Loan
+  // Home Loan Section
   const [nestedHomeDropDownOpen, setnestedHomeDropDownOpen] = useState(false);
   const handleNestedHomeMouseEnter = () => {
     setnestedHomeDropDownOpen(true);
@@ -52,6 +54,94 @@ const Header = () => {
 
   const handleNestedHomeMouseLeave = () => {
     setnestedHomeDropDownOpen(false);
+  };
+
+  // Loan Against Property Section
+  const [
+    nested_Loan_again_property_MouseEnter,
+    setnested_Loan_again_property_MouseEnter,
+  ] = useState(false);
+  const handle_nested_Loan_again_property_MouseEnter = () => {
+    setnested_Loan_again_property_MouseEnter(true);
+  };
+  const handle_nested_Loan_again_property_MouseLeave = () => {
+    setnested_Loan_again_property_MouseEnter(false);
+  };
+
+  // Business Loan Section
+  const [nested_Business_Loan_MouseEnter, setnested_Business_Loan_MouseLeave] =
+    useState(false);
+  const handle_nested_Business_Loan_MouseEnter = () => {
+    setnested_Business_Loan_MouseLeave(true);
+  };
+  const handle_nested_Business_Loan_MouseLeave = () => {
+    setnested_Business_Loan_MouseLeave(false);
+  };
+
+  // Gold Loan Section
+  const [nested_Gold_Loan_MouseEnter, setnested_Gold_Loan_MouseLeave] =
+    useState(false);
+  const handle_nested_Gold_Loan_MouseEnter = () => {
+    setnested_Gold_Loan_MouseLeave(true);
+  };
+  const handle_nested_Gold_Loan_MouseLeave = () => {
+    setnested_Gold_Loan_MouseLeave(false);
+  };
+
+  // Education Loan Section
+  const [
+    nested_Education_Loan_MouseEnter,
+    setnested_Education_Loan_MouseLeave,
+  ] = useState(false);
+  const handle_nested_Education_Loan_MouseEnter = () => {
+    setnested_Education_Loan_MouseLeave(true);
+  };
+  const handle_nested_Education_Loan_MouseLeave = () => {
+    setnested_Education_Loan_MouseLeave(false);
+  };
+
+  // New Car Loan Section
+  const [nested_New_Car_Loan_MouseEnter, setnested_New_Car_Loan_MouseLeave] =
+    useState(false);
+  const handle_nested_New_Car_Loan_MouseEnter = () => {
+    setnested_New_Car_Loan_MouseLeave(true);
+  };
+  const handle_nested_New_Car_Loan_MouseLeave = () => {
+    setnested_New_Car_Loan_MouseLeave(false);
+  };
+
+  // Used Car Loan Section
+  const [nested_Used_Car_Loan_MouseEnter, setnested_Used_Car_Loan_MouseLeave] =
+    useState(false);
+  const handle_nested_Used_Car_Loan_MouseEnter = () => {
+    setnested_Used_Car_Loan_MouseLeave(true);
+  };
+  const handle_nested_Used_Car_Loan_MouseLeave = () => {
+    setnested_Used_Car_Loan_MouseLeave(false);
+  };
+
+  // Used Car Loan Section
+  const [
+    nested_Health_Care_Equipment_Loan_MouseEnter,
+    setnested_Health_Care_Equipment_Loan_MouseLeave,
+  ] = useState(false);
+  const handle_nested_Health_Care_Equipment_Loan_MouseEnter = () => {
+    setnested_Health_Care_Equipment_Loan_MouseLeave(true);
+  };
+  const handle_nested_Health_Care_Equipment_Loan_MouseLeave = () => {
+    setnested_Health_Care_Equipment_Loan_MouseLeave(false);
+  };
+
+  // Used Car Loan Section
+  const [
+    nested_Passenger_Commercial_Vehicle_MouseEnter,
+    setnested_Passenger_Commercial_Vehicle_MouseLeave,
+  ] = useState(false);
+  const handle_nested_Passenger_Commercial_Vehicle_MouseEnter = () => {
+    setnested_Passenger_Commercial_Vehicle_MouseLeave(true);
+  };
+  const handle_nested_Passenger_Commercial_Vehicle_MouseLeave = () => {
+    setnested_Passenger_Commercial_Vehicle_MouseLeave(false);
   };
 
   return (
@@ -73,9 +163,9 @@ const Header = () => {
           menuOpen ? "block " : "hidden"
         } lg:static lg:bg-transparent lg:p-0`}
       >
-        <ul className="flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px]">
+        <ul className="flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px] scrollable-menu">
           <li
-            className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]"
+            className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4] scrollable-content"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -97,8 +187,8 @@ const Header = () => {
               </svg>
             </span>
             {dropdownOpen && (
-              <div className="mt-6 absolute pt-6 text-black bg-white">
-                <ul>
+              <div className="mt-6 absolute left-[22rem] pt-6 text-black bg-white">
+                <ul className="border h-[450px] overflow-y-auto">
                   <li
                     className="dropdown"
                     onMouseEnter={handleNestedMouseEnter}
@@ -106,7 +196,7 @@ const Header = () => {
                   >
                     Personal Loans
                     {nestedDropDownOpen && (
-                      <ul className="px-1 absolute left-full bg-white top-6">
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
                         <li
                           className="dropdown1"
                           onMouseEnter={handleBankWiseMouseEnter}
@@ -119,7 +209,7 @@ const Header = () => {
                                 Bank Wise
                               </p>
                               <hr />
-                              <div className="grid xl:grid-cols-5 gap-4 my-6">
+                              <div className="grid xl:grid-cols-5 gap-4 my-6 ">
                                 {/* <Link to="/bank"> */}
                                 <img src={bank2} alt="Bank 2" />
                                 {/* </Link> */}
@@ -170,7 +260,7 @@ const Header = () => {
                   >
                     Home Loan
                     {nestedHomeDropDownOpen && (
-                      <ul className="px-1 absolute left-full bg-white top-6 overflow-x-scroll">
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6 overflow-x-scroll">
                         <li className="dropdown1">Bank Wise</li>
                         <li className="dropdown1">Applicant Type</li>
                         <li className="dropdown1">Loan Product Wise</li>
@@ -202,15 +292,231 @@ const Header = () => {
                     )}
                   </li>
 
-                  
-                  <li className="dropdown">Loan Against Property</li>
-                  <li className="dropdown">Business Loan</li>
-                  <li className="dropdown">Gold Loan</li>
-                  <li className="dropdown">Education Loan</li>
-                  <li className="dropdown">New Car Loan</li>
-                  <li className="dropdown">Used Car Loan</li>
-                  <li className="dropdown">Health Care Equipment Loan</li>
-                  <li className="dropdown">Passenger Commercial Vehicle</li>
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_Loan_again_property_MouseEnter}
+                    onMouseLeave={handle_nested_Loan_again_property_MouseLeave}
+                  >
+                    Loan Against Property
+                    {nested_Loan_again_property_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">
+                          Property Funding According To Title
+                        </li>
+                        <li className="dropdown1">
+                          Property Funding According To Nature
+                        </li>
+                        <li className="dropdown1">
+                          Property Wise Funding According To Usage
+                        </li>
+                        <li className="dropdown1">
+                          Specific Property Wise Funding
+                        </li>
+                        <li className="dropdown1">LTV on Residential</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_Business_Loan_MouseEnter}
+                    onMouseLeave={handle_nested_Business_Loan_MouseLeave}
+                  >
+                    Business Loan
+                    {nested_Business_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_Gold_Loan_MouseEnter}
+                    onMouseLeave={handle_nested_Gold_Loan_MouseLeave}
+                  >
+                    Gold Loan
+                    {nested_Gold_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">LTV on Registry Wise</li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Application Age Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Rate Of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History Wise</li>
+                        <li className="dropdown1">Specific Salaried Wise</li>
+                        <li className="dropdown1">
+                          Specific Self Employed Wise
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_Education_Loan_MouseEnter}
+                    onMouseLeave={handle_nested_Education_Loan_MouseLeave}
+                  >
+                    Education Loan
+                    {nested_Education_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Monthly Salary Wise</li>
+                        <li className="dropdown1">Salary Mode</li>
+                        <li className="dropdown1">Loan Product</li>
+                        <li className="dropdown1">Loan Program</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Applicant Age Wise</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_New_Car_Loan_MouseEnter}
+                    onMouseLeave={handle_nested_New_Car_Loan_MouseLeave}
+                  >
+                    New Car Loan
+                    {nested_New_Car_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Monthly Salary Wise</li>
+                        <li className="dropdown1">Salary Mode</li>
+                        <li className="dropdown1">Loan Product</li>
+                        <li className="dropdown1">Loan Program</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Applicant Age Wise</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handle_nested_Used_Car_Loan_MouseEnter}
+                    onMouseLeave={handle_nested_Used_Car_Loan_MouseLeave}
+                  >
+                    Used Car Loan
+                    {nested_Used_Car_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Applicant Age Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Rate Of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History Wise</li>
+                        <li className="dropdown1">Specific Salaried Wise</li>
+                        <li className="dropdown1">Specific Self Employed</li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={
+                      handle_nested_Health_Care_Equipment_Loan_MouseEnter
+                    }
+                    onMouseLeave={
+                      handle_nested_Health_Care_Equipment_Loan_MouseLeave
+                    }
+                  >
+                    Health Care Equipment Loan
+                    {nested_Health_Care_Equipment_Loan_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Applicant Age Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Rate Of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History Wise</li>
+                        <li className="dropdown1">Specific Salaried Wise</li>
+                        <li className="dropdown1">
+                          Specific Self Employed Wise
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={
+                      handle_nested_Passenger_Commercial_Vehicle_MouseEnter
+                    }
+                    onMouseLeave={
+                      handle_nested_Passenger_Commercial_Vehicle_MouseLeave
+                    }
+                  >
+                    Passenger Commercial Vehicle
+                    {nested_Passenger_Commercial_Vehicle_MouseEnter && (
+                      <ul className="h-[450px] overflow-y-auto px-1 absolute left-full bg-white top-6">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Applicant Age Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Rate Of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History Wise</li>
+                        <li className="dropdown1">Specific Salaried Wise</li>
+                        <li className="dropdown1">
+                          Specific Self Employed Wise
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
                   <li className="dropdown">CGTMISE</li>
                   <li className="dropdown">Loan Against Security</li>
                   <li className="dropdown">Working Capital OD Limit</li>
