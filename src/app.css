@@ -174,3 +174,35 @@ body{
 .btn-hover:hover::before {
   left: 100%;
 }
+
+
+
+/* Navbar */
+/* hover:bg-[#DFE4FF] py-2 mx-1 rounded-lg px-2 */
+
+.dropdown{
+  padding: 10px 10px;
+  
+  border-radius: 10px;
+}
+
+
+.dropdown:hover{
+  background-color: #DFE4FF;
+  /* font-weight: 600; */
+}
+
+
+.dropdown1{
+  padding: 10px 10px;
+  
+  border-radius: 10px;
+  width: 250px;
+}
+
+
+.dropdown1:hover{
+  background-color: #DFE4FF;
+  font-weight: 600;
+}
+
