@@ -1,12 +1,57 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
+import "../app.css";
+// import bank1 from "/public/bank_1.png";
+// import bank2 from "/public/bank_2.png";
+// import bank3 from "/public/bank_3.png";
+import bank1 from "../assets/bank_1.png";
+import bank2 from "../assets/bank_2.png";
+import bank3 from "../assets/bank_3.png";
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [dropdownOpen, setdropOpen] = useState(false);
+  const [nestedDropDownOpen, setnestedDropDownOpen] = useState(false);
+  const [bankWiseDropdownOpen, setBankWiseDropdownOpen] = useState(false);
+
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleMouseEnter = () => {
+    setdropOpen(true);
+  };
+  const handleMouseLeave = () => {
+    setdropOpen(false);
+  };
+
+  const handleNestedMouseEnter = () => {
+    setnestedDropDownOpen(true);
+  };
+
+  const handleNestedMouseLeave = () => {
+    setnestedDropDownOpen(false);
+  };
+
+  const handleBankWiseMouseEnter = () => {
+    setBankWiseDropdownOpen(true);
+  };
+
+  const handleBankWiseMouseLeave = () => {
+    setBankWiseDropdownOpen(false);
+  };
+
+  // Home Loan
+  const [nestedHomeDropDownOpen, setnestedHomeDropDownOpen] = useState(false);
+  const handleNestedHomeMouseEnter = () => {
+    setnestedHomeDropDownOpen(true);
+  };
+
+  const handleNestedHomeMouseLeave = () => {
+    setnestedHomeDropDownOpen(false);
   };
 
   return (
@@ -29,7 +74,11 @@ const Header = () => {
         } lg:static lg:bg-transparent lg:p-0`}
       >
         <ul className="flex flex-col items-center lg:flex-row lg:items-center lg:text-[16px] xl:text-[17px]">
-          <li className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
+          <li
+            className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
             Loans
             <span>
               <svg
@@ -47,7 +96,129 @@ const Header = () => {
                 <path d="M6 9l6 6 6-6"></path>
               </svg>
             </span>
+            {dropdownOpen && (
+              <div className="mt-6 absolute pt-6 text-black bg-white">
+                <ul>
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handleNestedMouseEnter}
+                    onMouseLeave={handleNestedMouseLeave}
+                  >
+                    Personal Loans
+                    {nestedDropDownOpen && (
+                      <ul className="px-1 absolute left-full bg-white top-6">
+                        <li
+                          className="dropdown1"
+                          onMouseEnter={handleBankWiseMouseEnter}
+                          onMouseLeave={handleBankWiseMouseLeave}
+                        >
+                          Bank Wise
+                          {bankWiseDropdownOpen && (
+                            <div className="absolute left-full border top-0 bg-white px-4 w-[25rem]">
+                              <p className="text-[20px] text-[#314EE5] py-4">
+                                Bank Wise
+                              </p>
+                              <hr />
+                              <div className="grid xl:grid-cols-5 gap-4 my-6">
+                                {/* <Link to="/bank"> */}
+                                <img src={bank2} alt="Bank 2" />
+                                {/* </Link> */}
+                                <img src={bank1} alt="Bank 1" />
+                                <img src={bank3} alt="Bank 3" />
+                                <img src={bank2} alt="Bank 2" />
+                                <img src={bank3} alt="Bank 3" />
+                                <img src={bank1} alt="Bank 1" />
+                                <img src={bank2} alt="Bank 2" />
+                                <img src={bank3} alt="Bank 3" />
+                                <img src={bank2} alt="Bank 2" />
+                                <img src={bank1} alt="Bank 1" />
+                                <img src={bank3} alt="Bank 3" />
+                              </div>
+                            </div>
+                          )}
+                        </li>
+
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Monthly Salary Wise</li>
+                        <li className="dropdown1">Salary Mode</li>
+                        <li className="dropdown1">Loan Product</li>
+                        <li className="dropdown1">Loan Program</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tenure Wise</li>
+                        <li className="dropdown1">Rate of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History</li>
+                        <li className="dropdown1">Age Wise</li>
+                        <li className="dropdown1">Employer Type</li>
+                        <li className="dropdown1">
+                          Specific Employer Category
+                        </li>
+                        <li className="dropdown1">
+                          Specific Degree Wise Funding
+                        </li>
+                        <li className="dropdown1">
+                          Employee Current Job Experience
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+
+                  <li
+                    className="dropdown"
+                    onMouseEnter={handleNestedHomeMouseEnter}
+                    onMouseLeave={handleNestedHomeMouseLeave}
+                  >
+                    Home Loan
+                    {nestedHomeDropDownOpen && (
+                      <ul className="px-1 absolute left-full bg-white top-6 overflow-x-scroll">
+                        <li className="dropdown1">Bank Wise</li>
+                        <li className="dropdown1">Applicant Type</li>
+                        <li className="dropdown1">Loan Product Wise</li>
+                        <li className="dropdown1">Loan Program Wise</li>
+                        <li className="dropdown1">Specific Property Wise</li>
+                        <li className="dropdown1">
+                          LTV on Registry Value Wise
+                        </li>
+                        <li className="dropdown1">LTV on Market Value Wise</li>
+                        <li className="dropdown1">Application Age Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Amount Wise</li>
+                        <li className="dropdown1">Loan Tensure Wise</li>
+                        <li className="dropdown1">Rate Of Interest Wise</li>
+                        <li className="dropdown1">Cibil Score</li>
+                        <li className="dropdown1">Cibil History Wise</li>
+                        <li className="dropdown1">Specific Salaried Wise</li>
+                        <li className="dropdown1">
+                          Specific Self Employed Wise
+                        </li>
+                        <li className="dropdown1">
+                          Application Experience Wise
+                        </li>
+                        <li className="dropdown1">Application Income Wise</li>
+                        <li className="dropdown1">Property Chain Wise</li>
+                        <li className="dropdown1">Processing Fees Wise</li>
+                        <li className="dropdown1"></li>
+                      </ul>
+                    )}
+                  </li>
+
+                  
+                  <li className="dropdown">Loan Against Property</li>
+                  <li className="dropdown">Business Loan</li>
+                  <li className="dropdown">Gold Loan</li>
+                  <li className="dropdown">Education Loan</li>
+                  <li className="dropdown">New Car Loan</li>
+                  <li className="dropdown">Used Car Loan</li>
+                  <li className="dropdown">Health Care Equipment Loan</li>
+                  <li className="dropdown">Passenger Commercial Vehicle</li>
+                  <li className="dropdown">CGTMISE</li>
+                  <li className="dropdown">Loan Against Security</li>
+                  <li className="dropdown">Working Capital OD Limit</li>
+                </ul>
+              </div>
+            )}
           </li>
+
           <li className="flex items-center cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
             Cards
             <span>
@@ -67,9 +238,11 @@ const Header = () => {
               </svg>
             </span>
           </li>
+
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
             Insurance
           </li>
+
           <li className="flex cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
             Cibil Score
             <span>
@@ -89,6 +262,7 @@ const Header = () => {
               </svg>
             </span>
           </li>
+
           <li className="cursor-pointer my-2 lg:my-0 lg:ml-10 hover:text-[#1634D4]">
             <Link to="/calculator">EMI Calculator</Link>
           </li>
